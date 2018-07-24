@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh_cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>帮助中心-中天六建招采平台</title>
+    <meta name="keyword" content="帮助中心">
+    <meta name="description" content="帮助中心">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1">
+    <link rel="shortcut icon" href="index_1_files/favo.jpg">
+    <script src="index_1_files/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index_1_files/jquery_002.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index_1_files/hprose.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index_1_files/json.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index_1_files/common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index_1_files/base.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="index_1_files/common.css">
+    <link rel="stylesheet" href="index_1_files/help_main.css">
+</head>
+<body>
+<!--header顶部-->
+<div class="main-header">
+    <!--未登陆头部-->
+    <div class="top-bar">
+        <div class="layout clearfix">
+            <div class="top-bar__info">
+                <span>中天六建招采平台</span>
+                <span class="ml16">服务热线：400-100-0000</span>
+            </div>
+            <div class="top-bar__login">
+                <a href="register.html">注册</a>
+                <span>|</span>
+              <a href="login.html">登录</a>
+                <span>|</span>
+                <a href="contact.html">联系我们</a>
+            </div>
+        </div>
+    </div>
+
+    <!--顶部第二行-->
+    <div class="layout clearfix">
+        <a class="logo" href="http://www.zt6j.com/" title="中天六建招采平台">
+        </a>
+        <div class="search">
+            <ul class="search__list clearfix">
+                <li class="current search-li">招标信息</li>
+                <li class="search-li">中标信息</li>
+                <li class="search-li">找供应商</li>
+            </ul>
+            <div class="search__int">
+                <input class="search__input" id="search-input" onkeydown="if(event.keyCode==13){event.keyCode=0;event.returnValue=false; return false;}" type="text">
+                <input class="search__btn" id="search__btn" value="搜 索" type="button">
+            </div>
+        </div>
+    </div>
+
+    <!--主导航 开始-->
+    <div class="nav wrap">
+        <div class="clearfix">
+            <a href="index.html">首页</a><!--
+            --><a href="bidList.html">招标公告</a><!--
+            --><a href="bidWinList.html">中标公示</a><!--
+            --><a href="supplierIndex.html">找供应商</a><!--
+            --><a href="projectList.html">找项目</a><!--
+            -->
+        </div>
+    </div>
+</div>
+<!--<a href="/index.php/Home/Index/details_next" target="_blank">我要融资</a>-->
+	<div class="help-banner"></div>
+	<div class="w-width help-downs">
+
+	</div>
+	<div class="w-width help-box">
+		<div class="help-left fl">
+			<ul>
+                <li> </li>
+                <li class="li-bj">
+                    <a href="index_1.html">常见问题</a>
+                </li>
+                <li>
+                    <a href="index_toubiao.html">我要投标</a>
+                </li>
+                <li>
+                    <a href="index_zhaobiao.html">我要招标</a>
+                </li>
+                <li>
+                    <a href="index_other.html">其他问题</a>
+                </li>
+			</ul>
+		</div>
+        <div class="help-right fr">
+            <ul>
+                <li>
+                    <a href="index1.html">我如何注册?</a>
+                </li>
+                <li>
+                    <a href="index2.html">我如何登录?</a>
+                </li>
+                <li>
+                    <a href="index3.html">忘记密码怎么办?</a>
+                </li>
+            </ul>
+        </div>
+	</div>
+    
+    <!--底部开始-->
+
+<!--footer底部-->
+<div class="main-footer wrap">
+  <div class="footer-info layout clearfix">
+    <div class="sitemap">
+      <ul>
+        <h3 class="footer-info__about">关于我们</h3>
+        <li><a href="about.html" target="_blank">公司简介</a></li>
+        <li><a href="rules.html" target="_blank">交易规则</a></li>
+      </ul>
+      <ul>
+        <h3 class="footer-info__help">帮助中心</h3>
+        <li><a href="index_1.html" target="_blank">常见问题</a></li>
+        <li><a href="contact.html" target="_blank">联系我们</a></li>
+      </ul>
+      <ul>
+        <h3 class="footer-info__link">友情链接</h3>
+        <li><a href="http://www.96369.net/" target="_blank">西本新干线</a></li>
+        <li><a href="http://www.jc.net.cn/" target="_blank">中国建材在线</a></li>
+      </ul>
+    </div>
+    <div class="wechat-info">
+      <h3 class="footer-info__code">公众号</h3>
+      <dl>
+        <dd><img src="register_files/sus1.gif" alt="集采平台"></dd>
+      </dl>
+    </div>
+  </div>
+  <div class="bottom-info">
+    <span>地址：湖北省武汉市武昌区中北路1号(洪山广场转盘旁)</span>
+    <span>电话：027-87339590</span>
+    <span>邮箱：cjh@zt6j.com</span>
+  </div>
+</div>
+<!--校验验证码URL地址-->
+<input name="checkVerifyUrl" id="checkVerifyUrl" value="ajaxCheckVerify.html" type="hidden">
+<!--根据时间生成的Token-->
+<input name="timeToken" id="timeToken" value="" type="hidden">
+<!--网站根目录-->
+<input name="rootUrl" id="rootUrl" value="" type="hidden">
+<!--Token 根据控制器传-->
+<input name="tokenstr" id="tokenstr" value="" type="hidden">
+<!--Token 根据Cookie，通常用到Cookie-->
+<input name="TOKENNAME" id="TOKENNAME" value="zt6j.tokenstr" type="hidden">
+<!--Cookie的path值-->
+<input name="TOKENPATH" id="TOKENPATH" value="/" type="hidden">
+<!--Cookie的domain值-->
+<input name="DOMAINzt6j" id="DOMAINzt6j" value="zt6j.com" type="hidden">
+<!--登录成功后需要跳转的URL-->
+<input name="loginIndexUrl" id="loginIndexUrl" value="loginIndex.html" type="hidden">
+<!--首页URL-->
+<input name="indexUrl" id="indexUrl" value="index.html" type="hidden">
+<!--中标公示、招标公告、找供应商三个URL-->
+<input name="bidWinUrl" id="bidWinUrl" value="bidWinList.html" type="hidden">
+<input name="bidUrl" id="bidUrl" value="bidList.html" type="hidden">
+<input name="supplierUrl" id="supplierUrl" value="supplierIndex.html" type="hidden">
+<!--登录和注册URL-->
+<input name="loginUrl" id="loginUrl" value="login.html" type="hidden">
+<input name="registerUrl" id="registerUrl" value="register.html" type="hidden">
+<script language="javascript">
+  /*退出但不跳转*/
+  /*必须引用jquery.js和jquery.cookie.js*/
+  function logout_home(){
+    /*删除原有cookie*/
+      oldtokenname = $.cookie("zhujc.tokenstr");
+      $.cookie("zhujc.tokenstr", 			"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".uid", 		"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".username", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".listname", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companytype", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companyname", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companystate", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".adminflag", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".autharr", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".authids", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".phone", 		"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".id", 		"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".isfinancing",	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+    /*更新头部状态*/
+      document.location="/index.php/Home/Index/login";
+  }
+
+  /*cookie中id自动保存并清除cookie*/
+  /*判断是否有名为id的空间，如果有则把cookie中的id保存到隐藏控件中。*/
+  if($("#id").length>0){
+      $("#id").val('');
+  }
+  if($.cookie(".id")!=null){
+      if($("#id").length>0){
+          $("#id").val($.cookie(".id"));
+      }
+    /*完成id处理后，清除名为id的cookie*/
+    /*$.cookie(".id",'',{ expires: -1, path: "/" })	*/
+  }
+
+  //退出调用函数（刷新当前页面）
+  //必须引用jquery.js和jquery.cookie.js
+  function logout(){
+      oldtokenname = $.cookie("zhujc.tokenstr");
+      $.cookie("zhujc.tokenstr", 			"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".uid", 		"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".username", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".listname", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companytype", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companyname", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".companystate", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".adminflag", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".autharr", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".authids", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".phone", 		"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".id", 			"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      $.cookie(oldtokenname + ".isfinancing",	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+      //删除原有cookie
+
+      //刷新当前页
+      location.reload();
+  }
+</script>
+<!--问题反馈侧边栏-->
+<!--右侧悬浮框-->
+<div class="sidebar">
+    <ul>
+        <li class="sidebar__li1">
+            <div class="sidebar__question isHide">意见反馈</div>
+        </li>
+        <li class="sidebar__li2">
+            <div class="sidebar__tel isHide">
+                <p>联系电话：021-66666666 总机</p>
+                <p><em style="letter-spacing: 4px; font-style: normal">采购方</em>：156-1111-2141 李陈</p>
+                <p><em style="letter-spacing: 4px; font-style: normal">供应商</em>：138-1111-9914 曹泽坤</p>
+                <p>监督电话：156-1111-2141 李陈</p>
+                <p>QQ 在线：11111111</p>
+            </div>
+        </li>
+        
+        <li class="sidebar__li4 isHide" style="display: none;"></li>
+    </ul>
+</div>
+
+<!--问题反馈内容-->
+<div class="advise-view isHide model" id="adviseView">
+    <div class="advise-view__header">
+        <h3 class="advise-view__h3">
+            用户体验提升计划
+        </h3>
+        <ul class="advise-view__list">
+            <li>功能操作不方便？</li>
+            <li>使用时遇到系统问题？</li>
+            <li>或有更好的功能建议？</li>
+            <li>欢迎您随时提出来！</li>
+        </ul>
+        <div class="advise-view__contact">
+            如需投诉，请联系 13369546935（李陈）<br> 您会获得更专业快速的解决方案！
+        </div>
+        <div class="advise-view__cover"></div>
+    </div>
+    <div class="advise-view__content" style="position: relative">
+        <span class="advise-view__close"></span>
+        <div class="advise-view__layout">
+            <div class="advise-view__box" style="padding: 10px 0 0 0;">
+                <p><span class="red">*</span> 1、我们存在哪些不足（不少于10个字）</p>
+                <textarea type="text" class="advise-view__textarea" id="adviseContent" placeholder="请将您的建议或您遇到的问题告诉我们，我们会认真听取并及时反馈" autocomplete="off"></textarea>
+                <span class="advise-view__notice" id="adviseNotice"></span>
+            </div>
+            <div class="advise-view__box" style="padding: 4px 0 0 0;">
+                <p>2、请留下你的信息，以便我们及时反馈</p>
+                <input class="advise-view__input" name="adviseName" id="adviseName" placeholder="请输入您的姓名" autocomplete="off" type="text">
+                <input class="advise-view__input" style="margin-bottom: 0" name="advisePhone" id="advisePhone" placeholder="请输入您的号码" autocomplete="off" type="text">
+                <span class="advise-view__notice" id="phoneNotice"></span>
+            </div>
+            <div class="advise-view__box" style="position: absolute; left: 190px; bottom: 0; padding: 0">
+                <button class="advise-view__btn-submit" id="adviseSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Token 根据控制器传-->
+<input name="tokenstrSide" id="tokenstrSide" value="" type="hidden">
+<script src="index_1_files/base.js"></script>
+<script type="text/javascript" src="index_1_files/plupload.js"></script>
+<script type="text/javascript" src="index_1_files/upload.js"></script>
+<script type="text/javascript">
+    $("#adviseContent").click(function() {
+        $("#adviseNotice").text("");
+    });
+    var phoneState = 0;
+    $("#advisePhone").keyup(function(){
+        var phoneVal = $(this).val();
+        var phoneReg = '^1(3[0-9]|4[57]|5[0-9]|7[0-9]|8[0-9])\\d{8}$';
+        var mobile_regular = new RegExp(phoneReg);
+        if(mobile_regular.test(phoneVal)==false){
+            $("#phoneNotice").text("手机号格式不正确");
+            phoneState=1;
+        }else{
+            $("#phoneNotice").text("");
+            phoneState=0;
+        }
+    });
+
+    $("#adviseSubmit").click(function() {
+        var adviseContent = $.trim($("#adviseContent").val());
+        var adviseName = $.trim($("#adviseName").val());
+        var advisePhone = $.trim($("#advisePhone").val());
+
+        if (adviseContent == '') {
+            $("#adviseNotice").text("请输入留言内容");
+            return false;
+        }
+        if (adviseContent.split('').length < 10) {
+            $("#adviseNotice").text("留言至少输入10个字");
+            return false;
+        }
+
+        if(advisePhone!=""){
+            if(phoneState==1){
+                $("#phoneNotice").text("手机号格式不正确");
+                return false;
+            }
+        }
+
+        if($("#tokenstrSide").val()){
+            if(adviseName==""){
+                adviseName = $.cookie($.cookie("zhujc.tokenstr") + ".listname");
+            }
+            if(advisePhone==""){
+                advisePhone = $.cookie($.cookie("zhujc.tokenstr") + ".phone");
+            }
+        }
+
+        var dataJson = {};
+        var param = {};
+        param.token = $("#tokenstr").val();
+        param.type = 2;
+        param.content = adviseContent;
+        param.listname = adviseName;
+        param.phone = advisePhone;
+        param.attach = $(".preview").find("p").attr("data-fileid");
+
+        dataJson.param = param;
+        dataJson.controller = "Index";
+        dataJson.method = "message_feedback";
+        httpRequest(dataJson, feedSuccCallback, feedErrCallback);
+    });
+
+    function feedSuccCallback(result) {
+        var jsonobj = JSON.parse(result);
+        if (jsonobj.success == 0) {
+            new Dialog({
+                "type": "fail",
+                "content": "留言失败，请重新提交！",
+                "buttons": ["确定"]
+            })
+        } else {
+            new Dialog({
+                "type": "success",
+                "content": "留言成功！",
+                "buttons": ["确定"],
+                "cancel": function() {
+                    hide_pop("adviseView");
+                }
+            })
+        }
+    }
+
+    function feedErrCallback() {
+        new Dialog({
+            "type": "fail",
+            "content": "留言失败，请重新提交！",
+            "buttons": ["确定"]
+        })
+    }
+</script>
+<!--<script src="/Public/js/help_rfloat.js" ></script>-->
+
+</body></html>

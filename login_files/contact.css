@@ -1,0 +1,63 @@
+.contact_banner{
+    background: url("../../image/banner/help.jpg");
+	
+}
+.contact-ul {
+    margin: 10px 0;
+}
+.contact-ul li {
+    float: left;
+    width: 640px;
+    height: 216px;
+}
+.contact-icon-title {
+    margin: 56px 0 30px 120px;
+}
+.contact-ul li .contact-ul-title span {
+    display: block;
+    margin-left: 120px;
+    text-indent: 2em;
+    font-size: 16px;
+    color: #666;
+}
+.contact-ul li .contact-ul-title h1 {
+    display: inline-block;
+    color: #4a4a4a;
+    font-weight: 400;
+}
+h1 {
+    font-size: 24px;
+}
+
+.contact-ul li .contact-ul-title .address-us {
+    width: 32px;
+    height: 28px;
+    margin-bottom: -4px;
+    background-position: -152px -7px;
+}
+
+.contact-ul li .contact-ul-title .business-us {
+    width: 32px;
+    height: 28px;
+    margin-bottom: -8px;
+    background-position: -248px -7px;
+}
+
+.contact-ul li .contact-ul-title .affairs-us {
+    width: 32px;
+    height: 28px;
+    margin-bottom: -4px;
+    background-position: -198px -7px;
+}
+.contact-ul li .contact-ul-title .service-us {
+    width: 32px;
+    height: 28px;
+    margin-bottom: -4px;
+    background-position: -295px -7px;
+}
+.contact-ul li:hover{
+    border-radius: 3px;
+    -webkit-box-shadow:0 0 10px #ff8d08;  
+    -moz-box-shadow:0 0 10px #ff8d08;  
+    box-shadow:0 0 10px #ff8d08;
+}

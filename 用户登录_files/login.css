@@ -1,0 +1,277 @@
+body,html{
+    height: 100%;
+}
+
+.ht100{
+    height:100%;
+}
+
+.main-header-bar {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #16141f;
+    color: #999;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.main-header-bar .top-nav-bar a {
+    /*display: inline-block;*/
+    font-size: 12px;
+    color: #999;
+}
+.main-header-bar .top-nav-bar span {
+    display: inline-block;
+    padding: 0 11px;
+}
+/*内容*/
+.landding-bg {
+	width: 100%;
+	min-width: 1280px;
+	/*height: 767px;*/
+	height: 100%;
+	/*background: url(login/bg.jpg) repeat center center;*/
+	background-image: url(bg1.jpg);
+	background-size: cover;
+}
+.main-content {
+	width: 100%;
+	height: 100%;
+	min-width: 1280px;
+	overflow: hidden;
+	position: relative;
+	background-image: url(bg1.jpg);
+	background-position: center center;
+}
+
+
+/*左边侧边栏*/
+.left-sidebar{
+    /*width: 330px;*/
+    /*height:115px;*/
+    float: left;
+}
+
+/*logo*/
+.left-sidebar h1{
+	display: inline-block;
+	width: 369px;
+	height: 88px;
+	background-position: center center;
+	background-image: url(logo%201.png);
+	margin-top: 64px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 18px;
+}
+
+/*用户登录 文字*/
+.user-land{
+    display: inline-block;
+    margin-top: 85px;
+    margin-left: 35px;
+    width: 146px;
+    height:55px;
+    border-left:1px solid #accbe0;
+    line-height: 55px;
+    text-align: center;
+    font-size: 24px;
+    color:#999;
+    font-weight: 400;
+}
+
+
+.zjc-size{
+	float: left;
+	width: 300px;
+	height: 120px;
+	background: url("../../image/main/landzi.png") no-repeat center center;
+	margin-left: -120px;
+	margin-top: 200px;
+}
+/*左边*/
+
+/*右边*/
+.land-title li.curr-land {
+    color: #1B83FF;
+    border-bottom: 1px solid #1B83FF;
+}
+.index-land .land-title li {
+    float: left;
+    width: 150px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 24px;
+    /*color: #bcbcbc;*/
+    font-weight: 100;
+    cursor: pointer;
+}
+.index-land .land-title {
+    width: 300px;
+    margin: 0 auto;
+}
+.right-sidebar {
+    width: 440px;
+    height: 100%;
+    position: relative;
+}
+.sidebar-bg {
+	width: 440px;
+	height: 100%;
+	background: #f7fbfd;
+	opacity: 0.8;
+	position: absolute;
+}
+.index-land {
+    position: absolute;
+    width: 440px;
+    margin-top: 120px;
+    border-bottom: 1px solid #bcbcbc;
+    color: #ccc;
+}
+.right-sidebar .land-content {
+    position: absolute;
+    top: 260px;
+    left: 70px;
+}
+.land-content .user-name {
+    height: 75px;
+    margin-bottom: 10px;
+}
+.land-content .user-small {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-position: 0 -215px;
+}
+.page-icon {
+	display: block;
+	background-image: url(../login_files/home-icon.png);
+	background-repeat: no-repeat;
+}
+.land-content .user-poos {
+    width: 50px;
+    height: 50px;
+    background-position: -78px -215px;
+}
+
+.page-icon {
+	float: left;
+	display: block;
+	background-image: url(../login_files/home-icon.png);
+	background-repeat: no-repeat;
+}
+.land-content .landing-user {
+    float: left;
+    width: 249px;
+    height: 50px;
+    outline: none;
+    padding: 14px 20px;
+    border: 1px solid #bcbcbc;
+    border-left: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-sizing: border-box;
+}
+.land-error {
+    height: 20px;
+    font-size: 14px;
+    color: red;
+    width: 100%;
+}
+.land-content .int-possword {
+    height: 75px;
+    margin-bottom: 10px;
+}
+.rule-a {
+    display: inline-block;
+    margin-left: -20px;
+    color: #5c5c5c;
+    font-size: 12px;
+}
+.land-content .land-submit {
+    height: 40px;
+    margin-top: 20%;
+}
+.land-content .land-submit-btn {
+    width: 298px;
+    line-height: 41px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 100;
+    text-align: center;
+    border: 1px solid #1B83FF;
+    background: #1B83FF;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+}
+.checkbox-wrapper:not(:last-child) {
+    display: inline-block;
+    margin-right: 20px;
+}
+.agree-poss-bar div {
+    display: block;
+    margin: 2px 0;
+}
+.checkbox-wrapper {
+    cursor: pointer;
+    font-size: 12px;
+    display: inline-block;
+    line-height: 22px;
+}
+.checkbox-wrapper span{
+    color: #5c5c5c;
+}
+.land-content .landing-forget {
+    width: 298px;
+    margin-top: 8px;
+    height: 37px;
+    line-height: 37px;
+    font-size: 12px;
+}
+.land-content .landing-forget>a {
+    float: left;
+    color: #1B83FF;
+}
+.land-content .landing-forget span a {
+    color: #5c5c5c;
+    margin-right: 8px;
+}
+.land-content .landing-forget span {
+    float: right;
+    color: #5c5c5c;
+}
+.checkbox-block.curr {
+    background: #1B83FF;
+}
+.land-bd {
+    border: 1px solid #ccc;
+}
+.checkbox-block {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.checkbox-bar {
+    white-space: nowrap;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+}
+.land-bd{
+	border: 1px solid #ccc !important;
+}  

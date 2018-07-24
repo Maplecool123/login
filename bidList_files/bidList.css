@@ -1,0 +1,47 @@
+.bidList__item li:nth-child(1) {
+    width: 180px;
+}
+
+.bidList__item li:nth-child(1) > div {
+    padding-left: 24px;
+}
+
+.bidList__item li:nth-child(2) {
+    width: 180px;
+}
+
+.bidList__item li:nth-child(2) > div {
+    padding-left: 50px;
+}
+
+.bidList__item li:nth-child(3) {
+    width: 180px;
+}
+
+.bidList__item li:nth-child(3) > div {
+    padding-left: 55px;
+}
+
+.bidList__item li:nth-child(4) {
+    width: 180px;
+}
+
+.bid-list__item li:nth-child(4) > div {
+    padding-left: 50px;
+}
+
+.bid-list__item li:nth-child(5) {
+    width: 175px;
+}
+
+.bid-list__item li:nth-child(5) > div {
+    padding-left: 40px;
+}
+
+.bid-list__item li:nth-child(6) {
+    width: 188px;
+}
+
+.bid-list__item li:nth-child(6) > div {
+    padding-left: 30px;
+}
