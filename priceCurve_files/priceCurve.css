@@ -1,0 +1,232 @@
+.bgcf6 {
+    background-color: #f6f6f6;
+}
+.whitec {
+    color:white;
+}
+body {
+    font-size: 12px;
+    color:#666;
+}
+.f14 {
+    font-size:14px;
+}
+.f18 {
+    font-size:18px;
+}
+
+.f20 {
+    font-size: 20px;
+}
+.f45 {
+    font-size: 45px;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+.mt30 {
+    margin-top: 30px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+.mr25 {
+    margin-right: 25px;
+}
+.ml40 {
+    margin-left: 40px;
+}
+.mb130 {
+    margin-bottom: 130px;
+}
+
+.iblock {
+    display: inline-block;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+i,
+em {
+    font-style: normal;
+}
+a {
+    cursor:pointer;
+    color:#666;
+}
+.w10 {
+    width: 10px;
+}
+.h10 {
+    height: 10px;
+}
+.br50 {
+    border-radius:50%;
+}
+.f_300 {
+    font-weight:400;
+}
+/* banner 图 */
+
+.banner {
+    height: 286px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner-price {
+	background-image: url(pricebanner.jpg);
+}
+
+
+/* ==参考报价== */
+
+.quote {
+    width: 20px;
+    height: 23px;
+    color: #565656;
+    vertical-align: top;
+    margin-top: 4px;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat 0 0;
+}
+
+.ztx-price-quote .ztx-price-material {
+    width: 410px;
+    height: 160px;
+    padding: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: inline-block;
+    box-shadow:0px 0px 15px #e4e4e4;
+}
+
+.ztx-price-quote .ztx-price-material .ztx-price-material-name {
+    margin-bottom: 3px;
+}
+
+
+/* 背景图 */
+
+.ztx-price-quote .ztx-price-steel {
+    background: url('../priceCurve_files/purple.png') no-repeat center center;
+}
+
+.ztx-price-quote .ztx-price-cement {
+    background: url('../priceCurve_files/orange.png') no-repeat center center;
+}
+
+.ztx-price-quote .ztx-price-snail {
+    background: url('../priceCurve_files/green.png') no-repeat center center;
+}
+
+
+/* 价格上下图标 */
+
+.upper {
+    width: 20px;
+    height: 15px;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -40px -3px;
+}
+
+.equality {
+    width: 33px;
+    height: 15px;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -77px -3px;
+}
+
+.down {
+    width: 20px;
+    height: 15px;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -125px -2px;
+}
+
+
+/* ==价格曲线图== */
+
+.ztx-price-curve {
+    width: 1280px;
+    height: 402px;
+    padding: 20px 0 20px 10px;
+    box-shadow:0px 0px 15px #e4e4e4;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+/* 价格折线图 */
+
+.ztx-price-curve .ztx-price-curve-map {
+    width: 1079px;
+    border-right: 1px dashed #dedfe0;
+    position: relative;
+}
+.ztx-price-curve .ztx-price-curve-legend {
+    min-width:264px;
+    position: absolute;
+    top:8px;
+    right: 20px;
+}
+.ztx-price-curve .ztx-price-curve-legend .legend-steel {
+    background-color: #92b3ff;
+}
+.ztx-price-curve .ztx-price-curve-legend .legend-cement {
+    background-color: #1B83FF;
+}
+.ztx-price-curve .ztx-price-curve-legend .legend-snail {
+    background-color: #70e0a8;
+}
+/* 材料单选项 */
+
+.ztx-price-curve .ztx-price-curve-map .ztx-price-curve-radio .curve-radio {
+    width: 20px;
+    height: 17px;
+    vertical-align: top;
+}
+
+.ztx-price-curve .ztx-price-curve-map .ztx-price-curve-radio .unselected {
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -215px -3px;
+}
+
+.ztx-price-curve .ztx-price-curve-map .ztx-price-curve-radio .selected {
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -172px -3px;
+}
+
+
+/* 其他价格链接 */
+
+.ztx-price-curve .ztx-price-curve-link {
+    width: 190px;
+}
+
+.ztx-price-curve .ztx-price-curve-link .curve-link-more {
+    width: 160px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat 0px -49px;
+}
+.ztx-price-curve .ztx-price-curve-link .curve-link-more:hover {
+	color: #FFFFFF;
+	background: url('../priceCurve_files/iconPrice.png') no-repeat 0px -132px;
+}
+
+.ztx-price-curve .ztx-price-curve-link .curve-link-more .link-arrow {
+    width: 18px;
+    height: 16px;
+    vertical-align:text-top;
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -270px 3px;
+}
+.ztx-price-curve .ztx-price-curve-link .curve-link-more:hover .link-arrow,
+i,.link-arrow:hover {
+    background: url('../priceCurve_files/iconPrice.png') no-repeat -243px 3px;
+}

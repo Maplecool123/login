@@ -1,0 +1,3942 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>用户注册信息完善</title>
+<link rel="shortcut icon" href="./regInformation_files/favicon.png">
+<link href="regInformation_files/base.css" type="text/css" rel="Stylesheet">
+<link href="regInformation_files/common.css" type="text/css" rel="Stylesheet">
+<link href="regInformation_files/ui-dialog.css" type="text/css" rel="Stylesheet">
+<link href="regInformation_files/tip-yellowsimple.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="regInformation_files/hprose.js" flashpath="/Public/js/hprose/"></script>
+<script type="text/javascript" src="regInformation_files/jquery-1.js"></script>
+<script type="text/javascript" src="regInformation_files/json2.js" flashpath=""></script>
+<script type="text/javascript" src="regInformation_files/jquery_002.js" flashpath=""></script>
+<script type="text/javascript" src="regInformation_files/json2.js" flashpath=""></script>
+<script language="javascript">
+	var publicpath = "/Public/";
+	var hprosepath = "http://www.zt6j.com";
+</script>
+<script type="text/javascript" src="regInformation_files/ddaccordion.js"></script>
+<script type="text/javascript" src="regInformation_files/common.js"></script><style type="text/css">
+.categoryitems{display: none}
+a.hiddenajaxlink{display: none}
+</style><style type="text/css">
+.subcategoryitems{display: none}
+a.hiddenajaxlink{display: none}
+</style>
+<script type="text/javascript" src="regInformation_files/common_shi.js"></script>
+<script type="text/javascript" src="regInformation_files/WdatePicker.js"></script><link href="regInformation_files/WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="regInformation_files/jquery.js"></script>
+<script language="javascript">
+	//退出调用函数（跳转到登录页面）
+	//必须引用jquery.js和jquery.cookie.js
+	function logout(){
+			
+		oldtokenname = $.cookie("zhujc.tokenstr");
+		$.cookie("zhujc.tokenstr", 			"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".uid", 		"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".username", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".listname", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".companytype", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".companyname", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".companystate", "", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".adminflag", 	"", 	{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".autharr", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".authids", 	"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+		$.cookie(oldtokenname + ".phone", 		"",		{ expires: -1, path: "/",domain:"zhujc.com" });
+		//删除原有cookie
+		
+		document.location="/index.php/Home/Index/login";
+	}
+</script>
+
+
+<link href="regInformation_files/default.css" rel="stylesheet"><style id="poshytip-css-tip-yellowsimple" type="text/css">div.tip-yellowsimple{visibility:hidden;position:absolute;top:0;left:0;}div.tip-yellowsimple table, div.tip-yellowsimple td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip-yellowsimple td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip-yellowsimple td.tip-right{background-position:100% 0;}div.tip-yellowsimple td.tip-bottom{background-position:100% 100%;}div.tip-yellowsimple td.tip-left{background-position:0 100%;}div.tip-yellowsimple div.tip-inner{background-position:-10px -10px;}div.tip-yellowsimple div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style></head>
+<body>
+<div class="mainnav common">
+  <div id="mainnav_l"><a href="index.html" onclick="javascript:void(0)"><img src="regInformation_files/logo.png" alt="logo"></a> </div>
+  <div id="mainnav_r">
+    <div class="user_login"><a href="index.html">首页</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span>欢迎您，</span><span class="name" id="spanlistname">陈京华</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a class="chg blue" onclick="javascript:logout();" href="login.html">【退出】</a> </div>
+   
+  </div>
+</div>
+<div id="nav">
+  <div class="nav_main common_b">
+    <ul>
+            <li><a id="first_a0" href="regInformation.html"><img src="regInformation_files/setting.png">设置中心</a> </li>      <li> <a id="first_dd" href="index.html"><img src="regInformation_files/manager.png">管理首页</a> </li>
+    </ul>
+  </div>
+</div>
+<script language="javascript">
+	listnamecookienm = $.cookie("zhujc.tokenstr") + '.listname';
+	$("#spanlistname").text($.cookie(listnamecookienm));
+</script>
+
+<div class="common four">
+  <p id="nk_top" class="e_x">
+    <span class="left">当前位置：</span> <a class="blue a_big" href="index.html" title="管理首页">管理首页</a><span>&gt;</span>
+    <a class="a_small grayb" title="用户注册信息完善">用户注册信息完善</a>
+  </p>
+  <div class="mana_main mt10">
+
+    	<div class="info_nav g_b">
+      <div class="click_info" index=""> <a href="index.html">管理首页</a></div>
+       <div class="info_nav_main"> 
+      <h3 class="menuheader expandable  leftchose" headerindex="0h"> 供应商管理</h3> 
+      <ul class="categoryitems" contentindex="0c" style="display: none;"> 
+       <li id="22"><a href="#" index="21|22" title="投标管理" class="liorge">投标管理</a></li> 
+       <li id="23"><a href="#" index="21|23" title="合同管理">合同管理</a></li> 
+       <li id="24"><a href="#" index="21|24" title="订单管理">订单管理</a></li> 
+       <li id="25"><a href="#" index="21|25" title="入库管理">入库管理</a></li> 
+       <li id="26"><a href="#" index="21|26" title="发票管理">发票管理</a></li> 
+       <!--<li id="27"><a href="#" index="21|27" title="收款管理">收款管理</a></li> -->
+       <li id="28" style="display: none;"><a href="#" index="21|28" title="退货管理">退货管理</a></li> 
+       <li id="29" style="display: none;"><a href="#" index="21|29" title="索赔管理">索赔管理</a></li> 
+       <li id="30" style="display: none;"><a href="#" index="21|30" title="质量异议管理">质量异议管理</a></li> 
+       <li id="31" style="display: none;"><a href="#" index="21|31" title="账款异议管理">账款异议管理</a></li> 
+       <li id="32" style="display: none;"><a href="#" index="21|32" title="评论管理">评论管理</a></li>
+       <li id="33"><a href="#" index="21|33" title="平台保证金管理">平台保证金管理</a></li>
+      </ul>
+
+           <h3 class="menuheader expandable" headerindex="1h">保证金管理</h3>
+           <ul class="categoryitems" contentindex="1c" style="display: none;">
+               <li id="38"><a href="#" index="2|1" title="账户信息">账户信息</a></li>
+               <li id="39"><a href="#" index="2|2" title="保证金详情">保证金详情</a></li>
+               <li id="40"><a href="#" index="2|6" title="违规处理记录">违规处理记录</a></li>
+               <!--<li id="41"><a href="#" index="2|3" title="资金记录">资金记录</a></li>
+               <li id="42"><a href="#" index="2|4" title="充值">充值</a></li>
+               <li id="43"><a href="#" index="2|5" title="提现">提现</a></li>-->
+               <!--<li id="44"><a href="#" index="37|44" title="银行账号">银行账号</a></li> -->
+               <!--<li id="45"><a href="#" index="2|7" title="供应商贷款">供应商贷款</a></li>-->
+
+
+           </ul>
+           
+           <h3 class="menuheader expandable" headerindex="2h"> 融资管理</h3>
+           <ul class="categoryitems" contentindex="2c" style="display: none;">
+               <li id="52"><a href="#" index="51|52" title="融资概况">融资概况</a></li>
+               <!--<li id="53"><a href="#" index="51|53" title="融资标的">融资标的</a></li>-->
+               <!--<li id="54"><a href="#" index="51|54" title="融资申请">融资申请</a></li>-->
+               <!--<li id="55"><a href="#" index="51|55" title="融资记录">融资记录</a></li>-->
+           </ul>
+	  
+      <h3 class="menuheader expandable" headerindex="3h"> 设置中心</h3> 
+      <ul class="categoryitems" contentindex="3c" style="display: none;"> 
+       <li id="34"><a href="#" index="33|34" title="企业信息维护">企业信息维护</a></li> 
+       <li id="35"><a href="#" index="33|35" title="账户管理">账户管理</a></li> 
+       <li id="36"><a href="invoiceInfoIndex.html" index="33|36" title="开票信息">开票信息</a></li> 
+	   <li id="37"><a href="#" index="33|37" title="子账号管理">子账号管理</a></li> 
+      </ul>  
+       
+     </div> 
+    </div>
+            	 <script language="javascript">
+      		$("#36 a").attr('href',"invoiceInfoIndex.html");
+		</script> 
+    	<script language="javascript">
+			//产品部需求 隐藏未开发部分
+			//$("#24").hide();
+			// $("#25").hide();
+			//$("#26").hide();
+			$("#28").hide();
+			$("#29").hide();
+			$("#30").hide();
+			$("#31").hide();
+			$("#32").hide();
+		</script>   
+    <div class="name_nav_detail">
+      <div class="chge_nav" id="chge_nav_head">
+        <ul>
+          <li class="chose"><a>基本信息</a></li>
+        </ul>
+      </div>
+      <div class="some_info f_m bor_n">
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>公司名称：</div>
+          <div class="oddetail">
+            <input id="supplier_id" value="19377" type="hidden">
+            <input class="mo-input-d w_320" id="name" maxlength="50" value="中科同向" type="text">
+          </div>
+        </div>
+<div class="odlist">
+          <div class="odtitle">公司Logo：</div>
+          <div class="oddetail">
+            <input id="logo_id" value="" type="hidden">
+            <input id="logo" type="hidden">
+            <a class="chx blue" title="文件上传" id="btnlogo">文件上传(JEPG格式)</a>
+            <span id="logo_detail">无上传附件</span>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>经销商类型：</div>
+          <div class="oddetail">
+            <div class="mod-leftd mt5">
+              <div class="window_da2">
+                <div class="select_box">
+                  <div class="tag_select" id="type" value="">请选择</div>
+                  <ul class="tag_options" style="">
+                    <li class="open" value="1">厂商</li>
+                    <li class="open" value="2">代理商</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>企业类型：</div>
+          <div class="oddetail">
+            <select name="" class="business">
+                        <option value="10" selected="selected">国有企业</option>
+                        <option value="20">集体企业</option>
+                        <option value="30">股份合作企业</option>
+                        <option value="40">联营企业</option>
+                        <option value="50">有限责任公司</option>
+                        <option value="60">股份有限公司</option>
+                        <option value="70">私营企业</option>
+                        <option value="80">其他企业</option>
+                        <option value="90">港丶澳丶台商投资企业</option>
+                        <option value="100">合资经营企业(港或澳丶台资)</option>
+                        <option value="110">合作经营企业(港或澳丶台资)</option>
+                        <option value="120">港丶澳丶台商独资经营企业</option>
+                        <option value="130">港丶澳丶台商投资股份有限公司</option>
+                        <option value="140">外商投资企业</option>
+                        <option value="150">中外合资经营企业</option>
+                        <option value="160">中外合作经营企业</option>
+                        <option value="170">外商投资股份有限公司</option>
+                    </select>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>是否一般纳税人：</div>
+          <div class="oddetail">
+            <div style="float:left; padding-right:10px;">
+              <input name="taxpayer" value="1" checked="checked" type="radio">是 &nbsp;&nbsp;
+              <input name="taxpayer" value="2" type="radio">否
+            </div>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>注册资金：</div>
+          <div class="oddetail">
+            <input class="mo-input mo-input100 mt5" id="fund" type="text">万元 “只能填写阿拉伯数字”包括“0”
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>成立年份：</div>
+          <div class="oddetail">
+            <input class="Wdate mo-input w_90 mt5" id="createyear" onclick="WdatePicker({dateFmt:'yyyy',startDate:'2010-01-01',alwaysUseStartDate:true,maxDate:'%y-%M-%d'})" type="text">年
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>经营期限：</div>
+          <div class="oddetail">
+            <div style="float:left; padding-right:10px;">
+              <input name="rdperiod" value="1" type="radio">长期
+              <input name="rdperiod" checked="checked" value="2" type="radio">其他
+            </div>
+            <input id="operationperiod" class="mo-input mo-input150 Wdate" onclick="WdatePicker()" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>法人姓名：</div>
+          <div class="oddetail">
+            <input class="mo-input mo-input150 mt5" id="legalman" maxlength="50" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>营业执照注册号：</div>
+          <div class="oddetail">
+            <input class="mo-input mo-input150 mt5" id="licnumber" maxlength="50" type="text"> <img src="regInformation_files/licnumberpic.jpg" height="40px">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>经营范围：</div>
+          <div class="oddetail">
+            <textarea name="" id="scope"></textarea>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>营业地址：</div>
+          <div class="oddetail">
+            <div class="mod-leftx mt5" style="width: 113px;">
+              <div class="window_dax">
+                <div class="select_box">
+                  <div class="tag_select" id="province" value="">选择省/直辖市</div>
+                  <ul class="tag_options clear" style="width: 112px;"> <li class="open" value="1" code="11" title="北京市" onclick="javascript:setPDAS('#province','#city','#area','',2,11);">北京市</li> <li class="open" value="338" code="12" title="天津市" onclick="javascript:setPDAS('#province','#city','#area','',2,12);">天津市</li> <li class="open" value="636" code="13" title="河北省" onclick="javascript:setPDAS('#province','#city','#area','',2,13);">河北省</li> <li class="open" value="3102" code="14" title="山西省" onclick="javascript:setPDAS('#province','#city','#area','',2,14);">山西省</li> <li class="open" value="4670" code="15" title="内蒙古自治区" onclick="javascript:setPDAS('#province','#city','#area','',2,15);">内蒙古自治区</li> <li class="open" value="5827" code="21" title="辽宁省" onclick="javascript:setPDAS('#province','#city','#area','',2,21);">辽宁省</li> <li class="open" value="7531" code="22" title="吉林省" onclick="javascript:setPDAS('#province','#city','#area','',2,22);">吉林省</li> <li class="open" value="8558" code="23" title="黑龙江省" onclick="javascript:setPDAS('#province','#city','#area','',2,23);">黑龙江省</li> <li class="open" value="10543" code="31" title="上海市" onclick="javascript:setPDAS('#province','#city','#area','',2,31);">上海市</li> <li class="open" value="10808" code="32" title="江苏省" onclick="javascript:setPDAS('#province','#city','#area','',2,32);">江苏省</li> <li class="open" value="12596" code="33" title="浙江省" onclick="javascript:setPDAS('#province','#city','#area','',2,33);">浙江省</li> <li class="open" value="14234" code="34" title="安徽省" onclick="javascript:setPDAS('#province','#city','#area','',2,34);">安徽省</li> <li class="open" value="16068" code="35" title="福建省" onclick="javascript:setPDAS('#province','#city','#area','',2,35);">福建省</li> <li class="open" value="17359" code="36" title="江西省" onclick="javascript:setPDAS('#province','#city','#area','',2,36);">江西省</li> <li class="open" value="19280" code="37" title="山东省" onclick="javascript:setPDAS('#province','#city','#area','',2,37);">山东省</li> <li class="open" value="21387" code="41" title="河南省" onclick="javascript:setPDAS('#province','#city','#area','',2,41);">河南省</li> <li class="open" value="24022" code="42" title="湖北省" onclick="javascript:setPDAS('#province','#city','#area','',2,42);">湖北省</li> <li class="open" value="25579" code="43" title="湖南省" onclick="javascript:setPDAS('#province','#city','#area','',2,43);">湖南省</li> <li class="open" value="28240" code="44" title="广东省" onclick="javascript:setPDAS('#province','#city','#area','',2,44);">广东省</li> <li class="open" value="30164" code="45" title="广西壮族自治区" onclick="javascript:setPDAS('#province','#city','#area','',2,45);">广西壮族自治区</li> <li class="open" value="31563" code="46" title="海南省" onclick="javascript:setPDAS('#province','#city','#area','',2,46);">海南省</li> <li class="open" value="31929" code="50" title="重庆市" onclick="javascript:setPDAS('#province','#city','#area','',2,50);">重庆市</li> <li class="open" value="33007" code="51" title="四川省" onclick="javascript:setPDAS('#province','#city','#area','',2,51);">四川省</li> <li class="open" value="37906" code="52" title="贵州省" onclick="javascript:setPDAS('#province','#city','#area','',2,52);">贵州省</li> <li class="open" value="39556" code="53" title="云南省" onclick="javascript:setPDAS('#province','#city','#area','',2,53);">云南省</li> <li class="open" value="41103" code="54" title="西藏自治区" onclick="javascript:setPDAS('#province','#city','#area','',2,54);">西藏自治区</li> <li class="open" value="41877" code="61" title="陕西省" onclick="javascript:setPDAS('#province','#city','#area','',2,61);">陕西省</li> <li class="open" value="43776" code="62" title="甘肃省" onclick="javascript:setPDAS('#province','#city','#area','',2,62);">甘肃省</li> <li class="open" value="45286" code="63" title="青海省" onclick="javascript:setPDAS('#province','#city','#area','',2,63);">青海省</li> <li class="open" value="45753" code="64" title="宁夏回族自治区" onclick="javascript:setPDAS('#province','#city','#area','',2,64);">宁夏回族自治区</li> <li class="open" value="46047" code="65" title="新疆维吾尔自治区" onclick="javascript:setPDAS('#province','#city','#area','',2,65);">新疆维吾尔自治区</li> <li class="open" value="47493" code="71" title="台湾省" onclick="javascript:setPDAS('#province','#city','#area','',2,71);">台湾省</li> <li class="open" value="47494" code="81" title="香港特别行政区" onclick="javascript:setPDAS('#province','#city','#area','',2,81);">香港特别行政区</li> <li class="open" value="47495" code="82" title="澳门特别行政区" onclick="javascript:setPDAS('#province','#city','#area','',2,82);">澳门特别行政区</li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="mod-leftx mt5" style="width: 113px;">
+              <div class="window_dax">
+                <div class="select_box">
+                  <div class="tag_select" id="city" value="">请选择城市</div>
+                  <ul class="tag_options clear" style="width: 112px;">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mod-leftx mt5" style="width: 113px;">
+              <div class="window_dax">
+                <div class="select_box">
+                  <div class="tag_select" id="area" value="">请选择地区</div>
+                  <ul class="tag_options clear" style="width: 112px;">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <input class="mo-input mo-input238 mtf510" id="address" maxlength="150" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>联系电话：</div>
+          <div class="oddetail">
+            <input class=" mo-input mo-input60 mt5 i-gray" onfocus="if(this.value=='区号'){this.value=''};this.style.color='#666';" onblur="if(this.value==''){this.value='区号';this.style.color='#a9a9a9';}" id="linktel1" type="text">
+            <input class=" mo-input mo-input120 mt5 i-gray" onfocus="if(this.value=='固定电话'){this.value=''};this.style.color='#666';" onblur="if(this.value==''){this.value='固定电话';this.style.color='#a9a9a9';}" id="linktel2" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>紧急联系人：</div>
+          <div class="oddetail">
+            <input class="mo-input-d w_320" id="linkman" maxlength="50" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle">联系人职务：</div>
+          <div class="oddetail">
+            <input class="mo-input-d w_320" id="linkpost" maxlength="50" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>紧急联系人手机：</div>
+          <div class="oddetail">
+            <input class="mo-input-d w_320" id="linkphone" maxlength="50" type="text">
+          </div>
+        </div>
+        <!-- 区域多选 -->
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>业务覆盖范围：</div>
+          <div class="oddetail"> <a class="a_cheng" href="javascript:show_pop('dv_popy',true)">选择/修改</a> </div>
+        </div>
+        <div class="odlist">
+          <div class="oddetail" style=" margin-left:142px">
+            <div class="area_selected" style="display: none;"></div>
+            <ul class="area_selected_show"></ul>
+            <!-- 选择区域 v2.0.1 by yaorb -->
+            <link type="text/css" rel="stylesheet" href="regInformation_files/area_select.css">
+            <script type="text/javascript" src="regInformation_files/area_select.js"></script>
+            <script type="text/javascript">
+              //初始值设置
+              var area_key_list = ['北京市', '北京市', ''];
+              var area_json = $.area_json['中国'];
+              var area_selected = new Array();//区域选中级别
+              $('.area_list_js').empty();
+              var li_prev_html_selected = '<li class="ui-widget-content ui-selected"><span>';
+              var li_prev_html = '<li class="ui-widget-content"><span>';
+              var img_prev_html = '</span><a class="choice"><img title="选中" src="/Public/images/ok.gif"';
+              var img_prev_choiced_html = '</span><a class="choiced"><img title="选中" src="/Public/images/ok.gif"';
+              var li_last_html = '/></a></li>';
+            </script>
+            <script type="text/javascript" src="regInformation_files/area_select_detail.js"></script>
+            <!-- end 选择区域 -->
+          </div>
+        </div>
+        <!-- end 区域多选 -->
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>主营物资类别：</div>
+
+          <div class="oddetail"> <a class="a_cheng" onclick="choose_mater(0)">选择/修改</a> </div>
+        </div>
+        <div class="odlist">
+          <div class="oddetail" style=" margin-left:142px">
+            <div class="material_selected" style="display: block;"></div>
+            <ul class="material_selected_show"></ul>
+            <!-- 选择物资 v2.0.1 by yaorb -->
+            <link type="text/css" rel="stylesheet" href="regInformation_files/tip-yellowsimple.css">
+            <script type="text/javascript" src="regInformation_files/jquery.js"></script>
+            <script type="text/javascript" src="regInformation_files/material_select.js"></script>
+            <script type="text/javascript" src="regInformation_files/material_select_detail.js"></script>
+            <!-- end 选择物资 -->
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle">辅营物资类别：</div>
+          <div class="oddetail"> <a class="a_cheng" onclick="choose_mater(1)">选择/修改</a> </div>
+        </div>
+        <div class="odlist">
+          <div class="oddetail" style=" margin-left:142px">
+            <div class="material_selected" style="display: block;"></div>
+            <ul class="material_selected_show_fy"></ul>
+          </div>
+        </div>
+
+        <div class="odlist">
+          <div class="odtitle"><input onclick="threeAttachs(this)" id="threeAttachs" data-flag="false" style="margin-top:5px;margin-right:5px;" type="checkbox"></div>
+          <div class="oddetail">
+            <span> 三证合一 </span>
+          </div>
+        </div>
+        <div class="odlist lic-attaches">
+          <div class="odtitle"><span class="red">*</span>营业执照：</div>
+          <div class="oddetail">
+            <input id="licattach_id" value="" type="hidden">
+            <input id="licattach" type="hidden">
+            <a class="chx blue" title="文件上传" id="btnlicattach">文件上传(JEPG格式)</a>
+            <span id="licattach_detail">无上传附件</span>
+          </div>
+        </div>
+        <div class="odlist tax-attaches">
+          <div class="odtitle"><span class="red">*</span>税务登记证：</div>
+          <div class="oddetail btntaxattach">
+            <input id="taxattach_id" value="" type="hidden">
+            <input id="taxattach" type="hidden">
+            <a class="chx blue" title="文件上传" id="btntaxattach">文件上传(JEPG格式)</a>
+            <span id="taxattach_detail">无上传附件</span>
+          </div>
+        </div>
+        <div class="odlist org-attaches">
+          <div class="odtitle"><span class="red">*</span>组织机构代码证：</div>
+          <div class="oddetail btnorgattach">
+            <input id="orgattach_id" value="" type="hidden">
+            <input id="orgattach" type="hidden">
+            <a class="chx blue" title="文件上传" id="btnorgattach">文件上传(JEPG格式)</a>
+            <span id="orgattach_detail">无上传附件</span>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle">法人身份证(正面)：</div>
+          <div class="oddetail">
+            <input id="idcard_id" type="hidden">
+            <input id="idcard" type="hidden">
+            <a class="chx blue" title="文件上传" id="btnidcard">文件上传(JEPG格式)</a>
+            <span id="idcard_detail"></span>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle">法人身份证(反面)：</div>
+          <div class="oddetail">
+            <input id="card_id" type="hidden">
+            <input id="card" type="hidden">
+            <a class="chx blue" title="文件上传" id="btncard">文件上传(JEPG格式)</a>
+            <span id="card_detail"></span>
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="odtitle"><span class="red">*</span>推荐人：</div>
+          <div class="oddetail">
+            <div class="mod-leftx mt5" style="width: 113px;">
+              <div class="window_dax">
+                <div class="select_box">
+                  <div class="tag_select" id="refereetype" value="1">无推荐人</div>
+                  <ul class="tag_options clear" style="width: 112px;">
+                    <li class="open" onclick="javascript:$('#referee').val('请填写推荐人信息');$('#referee').hide();" title="无推荐人" value="1">无推荐人</li>
+                    <li class="open" onclick="javascript:$('#referee').val('请填写推荐人信息');$('#referee').show();$('#referee').focus();" title="筑集采销售" value="2">筑集采销售</li>
+                    <li class="open" onclick="javascript:$('#referee').val('请填写推荐人信息');$('#referee').show();$('#referee').focus();" title="第三方营销机构" value="3">第三方营销机构</li>
+                    <li class="open" onclick="javascript:$('#referee').val('请填写推荐人信息');$('#referee').show();$('#referee').focus();" title="其他" value="4">其他</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <input style="display:none;" class="mo-input w_110 mt5 i-                   gray" id="referee" onfocus="if(this.value=='请填写推荐人信息'){this.value='';this.style.color='#666';}" onblur="if(this.value==''){this.value='请填写推荐人信息';this.style.color='#a9a9a9';}" maxlength="100" type="text">
+          </div>
+        </div>
+        <div class="odlist">
+          <div class="mtf32per">
+
+            <a class="a_cheng k_03_1" id="submit_button" onclick="submit()">提交</a>
+            <a class="a_cheng k_03_1" onclick="javascript:history.back(-1);">返回</a>
+          </div>
+        </div>
+
+        <div id="supplyInfoFooter">
+          <div class="chge_nav" id="chge_nav_footer">
+            <ul>
+              <!--<li class="chose" onClick="change_tab(this,1)"><a>1.公司证照</a></li>-->
+              <li class="chose" onclick="change_tab(this,2)"><a>1.资质证书</a></li>
+              <li class="" onclick="change_tab(this,3)"><a>2.明星产品</a></li>
+              <li class="" onclick="change_tab(this,4)"><a>3.成功案例</a></li>
+              <li class="" onclick="change_tab(this,5)"><a>4.企业品牌</a></li>
+              <li class="" onclick="change_tab(this,6)"><a>5.企业荣誉</a></li>
+              <li class="" onclick="change_tab(this,7)"><a>6.企业相册</a></li>
+            </ul>
+          </div>
+          <div class="tab_dd" id="certification" style="">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span> <input class="mo-input" id="certificate_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="certificate_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button">
+                  <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(1, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:show_pop('dv_pop1',true)">新增资质证书</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>资质名称</th>
+                    <th>资质证明图片</th>
+                    <th>是否首页显示</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="certificate_list_id"></tbody>
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="certificate_page"></div>
+                </div>
+              </div>
+
+
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop1">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title">新增资质证书</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s">资质证书：</td>
+                                    <td colspan="2"><a class="chx blue" id="certificate_upload">文件上传(JPG格式)</a></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="certificate_id" type="hidden">
+                                      <input id="certificate" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="certificate_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td colspan="4">
+                                      <a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="submit_other(1)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层" ></div> -->
+              <!-- end JS遮罩层 -->
+            </div>
+          </div>
+          <div class="tab_dd" id="star_product" style="display:none">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span>
+                  <input class="mo-input" id="star_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="star_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button">
+                  <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(2, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:show_pop('dv_pop2',true)">新增明星产品</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>图片</th>
+                    <th>产品名称</th>
+                    <th>规格型号</th>
+                    <th>参数指标</th>
+                    <th>品牌</th>
+                    <th>产地</th>
+                    <th>单位</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="star_list_id">
+                </tbody>
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="star_page"></div>
+                </div>
+              </div>
+
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop2">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title" id="star_dialog">新增明星产品</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>产品名称：</td>
+                                    <td><input class="mo-input-d" id="product_name"></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>产品图片：</td>
+                                    <td><a class="chx blue" id="star_upload">文件上传(JPG格式)</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="star_id" type="hidden">
+                                      <input id="star" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="star_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>规格型号：</td>
+                                    <td><input class="mo-input-d" id="model"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">产地：</td>
+                                    <td><input class="mo-input-d" id="place"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>单位：</td>
+                                    <td><input class="mo-input-d" id="unit"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">品牌：</td>
+                                    <td><input class="mo-input-d" id="brand"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">参数指标：</td>
+                                    <td><input class="mo-input-d" id="para"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>描述：</td>
+                                    <td><textarea id="description_star"></textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="4"><a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="submit_other(2)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="edit_dv_pop2">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title" id="edit_star_dialog">编辑明星产品</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <input id="item_star_id" type="hidden">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>产品名称：</td>
+                                    <td><input class="mo-input-d" id="edit_product_name"></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>产品图片：</td>
+                                    <td><a class="chx blue" id="edit_star_upload">文件上传(JPG格式)</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="edit_star_id" type="hidden">
+                                      <input id="edit_star" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="edit_star_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>规格型号：</td>
+                                    <td><input class="mo-input-d" id="edit_model"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">产地：</td>
+                                    <td><input class="mo-input-d" id="edit_place"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>单位：</td>
+                                    <td><input class="mo-input-d" id="edit_unit"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">品牌：</td>
+                                    <td><input class="mo-input-d" id="edit_brand"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s">参数指标：</td>
+                                    <td><input class="mo-input-d" id="edit_para"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>描述：</td>
+                                    <td><textarea id="edit_description_star"></textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="3">
+                                      <a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="edit_submit_other(2)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                      <a class="a_cheng k_03_1" onclick="del_confirm(2, $('#item_star_id').val())">删除</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end 弹出框 -->
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层"></div> -->
+              <!-- end JS遮罩层 -->
+
+
+
+            </div>
+          </div>
+          <div class="tab_dd" id="success_case" style="display:none">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span> <input class="mo-input" id="case_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="case_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button"> <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(3, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:setPDAS('#province_case','#city_case','#area_case','',1,0);$('#city_case').closest('.select_box').children('ul.tag_options').find('li').remove();$('#area_case').closest('.select_box').children('ul.tag_options').find('li').remove();$('#city_case').html('%E8%AF%B7%E9%80%89%E6%8B%A9%E5%9F%8E%E5%B8%82');$('#area_case').html('%E8%AF%B7%E9%80%89%E6%8B%A9%E5%9C%B0%E5%8C%BA');show_pop('dv_pop3',true)">新增案例</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>成功案例名称</th>
+                    <th>甲方</th>
+                    <th>地址</th>
+                    <th>案例图片</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="case_list_id">
+                </tbody>
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="case_page"></div>
+                </div>
+              </div>
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop3">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title" id="case_dialog">新增案例</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>案例名称：</td>
+                                    <td><input class="mo-input-d" id="case_name" type="text"></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td class="tb-left_s">案例图片：</td>
+                                    <td><a class="chx blue" id="case_upload">文件上传(JPG格式)</a></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td>
+                                      <input id="case_id" type="hidden">
+                                      <input id="case" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="case_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>甲方：</td>
+                                    <td><input class="mo-input-d" id="firstparty" type="text"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>地址：</td>
+                                    <td style="display: inline">
+                                      <div class="mod-leftd mt5">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="province_case" value="">请选择省份</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">北京</li>
+                                              <li class="open" value="2">上海</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="mod-leftd mtf510">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="city_case" value="">请选择城市</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">上海</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="mod-leftd mtf510">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="area_case" value="">请选择地区</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">黄浦区</li>
+                                              <li class="open" value="2">闵行区</li>
+                                              <li class="open" value="3">黄浦区</li>
+                                              <li class="open" value="4">闵行区</li>
+                                              <li class="open" value="5">黄浦区</li>
+                                              <li class="open" value="6">闵行区</li>
+                                              <li class="open" value="7">黄浦区</li>
+                                              <li class="open" value="8">闵行区</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="2"><a style="margin-left: 100px;" class="a_cheng k_03_1" onclick="submit_other(3)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="edit_dv_pop3">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title" id="edit_case_dialog">编辑案例</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <input id="item_case_id" type="hidden">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>案例名称：</td>
+                                    <td><input class="mo-input-d" id="edit_case_name" type="text"></td>
+                                  </tr>
+
+                                  <tr>
+                                    <td class="tb-left_s">案例图片：</td>
+                                    <td><a class="chx blue" id="edit_case_upload">文件上传(JPG格式)</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="edit_case_id" type="hidden">
+                                      <input id="edit_case" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="edit_case_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>甲方：</td>
+                                    <td><input class="mo-input-d" id="edit_firstparty" type="text"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tb-left_s"><span style="color:red;">*</span>地址：</td>
+                                    <td style="display: inline">
+                                      <div class="mod-leftd mt5">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="edit_province_case" value="">请选择省份</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">北京</li>
+                                              <li class="open" value="2">上海</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="mod-leftd mtf510">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="edit_city_case" value="">请选择城市</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">上海</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="mod-leftd mtf510">
+                                        <div class="window_da2">
+                                          <div class="select_box">
+                                            <div class="tag_select" id="edit_area_case" value="">请选择地区</div>
+                                            <ul class="tag_options" style="display: none;">
+                                              <li class="open" value="1">黄浦区</li>
+                                              <li class="open" value="2">闵行区</li>
+                                              <li class="open" value="3">黄浦区</li>
+                                              <li class="open" value="4">闵行区</li>
+                                              <li class="open" value="5">黄浦区</li>
+                                              <li class="open" value="6">闵行区</li>
+                                              <li class="open" value="7">黄浦区</li>
+                                              <li class="open" value="8">闵行区</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="3">
+                                      <a style="margin-left: 100px;" class="a_cheng k_03_1" onclick="edit_submit_other(3)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                      <a class="a_cheng k_03_1" onclick="del_confirm(3, $('#item_case_id').val());">删除</a>
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层"></div> -->
+              <!-- end JS遮罩层 -->
+            </div>
+          </div>
+          <div class="tab_dd" id="company_brand" style="display:none">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span> <input class="mo-input" id="brand_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="brand_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button"> <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(4, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:show_pop('dv_pop4',true)">新增企业品牌</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>企业品牌名称</th>
+                    <th>企业品牌图片</th>
+                    <th>是否首页显示</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="brand_list_id">
+                </tbody>
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="brand_page"></div>
+                </div>
+              </div>
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop4">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title">新增企业品牌</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s">企业品牌：</td>
+                                    <td colspan="2"><a class="chx blue" id="brand_upload">文件上传(JPG格式)</a></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="brand_id" type="hidden">
+                                      <input id="brand" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="brand_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td colspan="4">
+                                      <a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="submit_other(4)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层"></div> -->
+              <!-- end JS遮罩层 -->
+            </div>
+          </div>
+          <div class="tab_dd" id="company_honor" style="display:none">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span> <input class="mo-input" id="honor_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="honor_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button"> <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(5, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:show_pop('dv_pop5',true)">新增企业荣誉</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>企业荣誉名称</th>
+                    <th>企业荣誉图片</th>
+                    <th>是否首页显示</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="honor_list_id">
+                </tbody>
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="honor_page"></div>
+                </div>
+              </div>
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop5">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title">新增企业荣誉</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s">企业荣誉：</td>
+                                    <td colspan="2"><a class="chx blue" id="honor_upload">文件上传(JPG格式)</a></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="honor_id" type="hidden">
+                                      <input id="honor" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="honor_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td colspan="4">
+                                      <a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="submit_other(5)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层"></div> -->
+              <!-- end JS遮罩层 -->
+            </div>
+          </div>
+          <div class="tab_dd" id="photo" style="display:none">
+            <div class="zhongj">
+              <div class="trans_name_top" style="height: auto;">
+                <div class="mibiao-row">
+                  <span class="left">综合条件：</span> <input class="mo-input" id="photo_txtname" name="txtname" maxlength="50" type="text">
+                  <input id="photo_search_button" value="查找" class="a_cheng a-cheng-button marg10" type="button">
+                  <a title="查看全部" class="chg blue i_b" style="margin-left: 20px;" onclick="getlist(6, 1);">查看全部</a>
+                  <a class="a_cheng a-cheng-button150 marg100" style="float: right" href="javascript:show_pop('dv_pop6',true)">新增企业相册</a>
+                </div>
+              </div>
+              <table class="liebiao bor_t" style="margin-top: 5px; word-break: break-all;" width="100%" cellspacing="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <th style="display:none;">序号</th>
+                    <th>图片描述</th>
+                    <th>企业图片</th>
+                    <th>是否首页显示</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="photo_list_id">
+                </tbody>
+
+              </table>
+              <div class="record_o">
+                <div>
+                  <div class="pagebar_record pagebar_margin " id="photo_page"></div>
+                </div>
+              </div>
+              <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none; position: absolute; top: 750px" id="dv_pop6">
+                <div i="dialog" class="ui-dialog">
+                  <div class="ui-dialog-arrow-b"></div>
+                  <table class="ui-dialog-grid">
+                    <tbody>
+                      <tr>
+                        <td i="header" class="ui-dialog-header"><button i="close" class="ui-dialog-close" title="取消" onclick="hide_pop('dv_pop');remove_tr();">×</button>
+                          <div i="title" class="ui-dialog-title">新增企业相册</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td i="body" class="ui-dialog-body">
+                          <div i="content" class="ui-dialog-content">
+                            <div>
+                              <table class="out-table" style="width: 500px;" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                  <tr>
+                                    <td class="tb-left_s">企业相册：</td>
+                                    <td colspan="2"><a class="chx blue" id="photo_upload">文件上传(JPG格式)</a></td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <input id="photo_id" type="hidden">
+                                      <input id="photo" type="hidden">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td><span id="photo_detail"></span></td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td colspan="4">
+                                      <a class="a_cheng k_03_1" style="margin-left: 150px;" onclick="submit_other(6)">提交</a>
+                                      <a class="a_cheng k_03_1" onclick="hide_pop('dv_pop');remove_tr();">取消</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JS遮罩层 -->
+              <!-- <div id="fullbg" onclick="hide_pop('dv_pop')" title="点击关闭弹出层"></div> -->
+              <!-- end JS遮罩层 -->
+
+            </div>
+
+          </div>
+          <!-- JS遮罩层 -->
+          <div id="fullbg" onclick="hide_pop('dv_pop');remove_tr();" title="点击关闭弹出层"></div>
+          <!-- end JS遮罩层 -->
+          <div tabindex="-1" class="ui-popup-show ui-popup-modal ui-popup-focus dialog_eg" style="display: none" id="dv_pop7">
+            <div i="dialog" class="ui-dialog">
+              <div class="ui-dialog-arrow-b"></div>
+              <div style="background-color: #f0f0f0; font-size: 18px;">
+                    感谢您进一步完善了贵公司的相关信息，管理委员会将于2个工作日内，进行评审认定。评审结果，我平台将短信通知您。届时您可以输入账户名或注册的手机号码登录系统进行业务操作。
+                  </div><table class="ui-dialog-grid">
+                <tbody>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- end 弹出框 -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 物资弹出框 v2.0.1 by yaorb-->
+<div tabindex="-1" class="dialog_eg" style="display:none;width:565px;" id="dv_popx">
+  <div class="dialog_content">
+    <button class="dialog_close" title="取消" onclick="hide_pop('dv_popx')">×</button>
+    <div class="dialog_header">请选择物资类别（可多选）<a class="a_cheng" style="float:right; margin-right:30px;" href="javascript:hide_pop('dv_popx')"> 确认</a></div>
+    <div class="dialog_body_nob">
+      <div class="odlist" style="overflow:hidden;">
+        <ul class="material_choose">
+          <li class="on">土建材料</li>
+          <li>装饰装修</li>
+          <li>电气工程</li>
+          <li>给排水材料</li>
+          <li>消防燃气</li>
+          <li>采暖通风</li>
+          <li>仿古工程</li>
+          <li>园林绿化</li>
+          <li>其他材料</li>
+          <li>分包租赁</li>
+        </ul>
+        <ul class="material_detail"><li><label class="tip" title="|钢筋|钢板|角钢|槽钢|扁钢|工字钢|H型钢|铝板（带）材|钢带|铝型材|方钢|钢绞线、钢丝束|钢轨及钢轨配件|钢丝线|其他型钢|钢丝|钢棒材|加工件|钢板材|金属原材料|铜线材|六角钢|铝棒材|铜带材|铝材|锌材|铝线材|Z型钢|八角钢|钛材|镍材|硅钢片|其它金属材料|"><input type="checkbox">黑色及有色金属</label></li><li><label class="tip" title="|水泥|水泥及混凝土预制品|砌块|砌砖|混凝土、砂浆外加剂|瓦|石子|砂|灰、粉、土等掺合填充剂|钢筋混凝土预制品|石材|轻骨料|"><input type="checkbox">水泥、砖瓦灰沙石及混凝土制品</label></li><li><label class="tip" title="|水泥混凝土|水泥砂浆|特种砂浆|沥青混凝土|其它砂浆|混合砂浆|特种混凝土|胶泥、脂、油|灰浆、水泥浆|轻质水泥混凝土|石灰砂浆|多合土垫层|灰土垫层|其他垫层材料|石子浆|"><input type="checkbox">砼、砂浆及其它配合比材料</label></li><li><label class="tip" title="|密封材料|劳保用品|电极材料|纸、笔|无损探伤用耗材|水电汽、煤炭|零星施工用料|火工材料|"><input type="checkbox">密封、电极及劳保用品等其它材料</label></li><li><label class="tip" title="|钢结构制作件|活动房屋|水箱|减震器|其它成型制品|铸铁及铁构件|木质加工件|预制烟囱、烟道|变形缝|机械设备安装用加工件|漏斗|压力容器构件|装置设备附件|翻边短管|"><input type="checkbox">成型构件及加工件</label></li></ul>
+      </div>
+      <div class="odlist">
+        <div class="oddetail">
+          <div class="material_selected" style="display: block;"></div>
+          <ul class="material_selected_show">
+          </ul>
+          <ul class="material_selected_show_fy">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end 物资弹出框 -->
+
+<!-- 地区弹出框 v2.0.1 by yaorb -->
+<div tabindex="-1" class="dialog_eg" style="display:none;width:590px;" id="dv_popy">
+  <div class="dialog_content">
+    <button class="dialog_close" title="取消" onclick="hide_pop('dv_popy')">×</button>
+    <div class="dialog_header">请选择业务覆盖范围（可多选）<a class="a_cheng" style="float:right; margin-right:30px;" href="javascript:hide_pop('dv_pop2')"> 确认</a>
+      <a class="a_cheng allcity" style="float:right; margin-right:225px;">全国</a>
+    </div>
+    <div class="dialog_body_nob">
+      <div class="odlist">
+        <div class="oddetail">
+          <div class="area-list area-wrapper">
+            <div class="area-list-item">
+              <div class="t">省份</div>
+              <div class="b">
+                <ol class="selectable area_list_js">
+                <li class="ui-widget-content ui-selected"><span>北京市</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>天津市</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>河北省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>山西省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>内蒙古自治区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>辽宁省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>吉林省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>黑龙江省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>上海市</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>江苏省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>浙江省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>安徽省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>福建省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>江西省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>山东省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>河南省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>湖北省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>湖南省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>广东省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>广西壮族自治区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>海南省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>重庆市</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>四川省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>贵州省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>云南省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>西藏自治区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>陕西省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>甘肃省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>青海省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>宁夏回族自治区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>新疆维吾尔自治区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>台湾省</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>香港特别行政区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li><li class="ui-widget-content"><span>澳门特别行政区</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li></ol>
+              </div>
+            </div>
+            <div class="area-list-item">
+              <div class="t">城市</div>
+              <div class="b">
+                <ol class="selectable area_list_js">
+                <li class="ui-widget-content ui-selected"><span>北京市</span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li></ol>
+              </div>
+            </div>
+            <div class="area-list-item" style="display:none;">
+              <div class="t">县区</div>
+              <div class="b">
+                <ol class="selectable area_list_js">
+                <li class="ui-widget-content ui-selected"><span></span><a class="choice"><img title="选中" src="regInformation_files/ok.gif"></a></li></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="odlist">
+        <div class="oddetail">
+          <div class="area_selected" style="display: none;"></div>
+          <ul class="area_selected_show">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end 地区弹出框 -->
+<!-- bottom -->
+<div class="footer">
+  <div class="footbar">
+<p class="links">
+      <a href="aboutus.html" target="_blank">关于我们</a><span> | </span><a href="connectus.html" target="_blank">联系我们</a><span> | </span><a href="connectus.html" target="_blank">帮助中心</a><span> | </span> </span><a href="dealrule.html" target="_blank">交易规则</a>
+    </p>
+    <p class="company_detail"> <span> 地址：湖北省武汉市武昌区中北路1号(洪山广场转盘旁)  &nbsp; 电话：027-87339590 </span> </p>
+    <p>&nbsp;</p>
+<script type="text/javascript">(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+  </div>
+</div>
+
+
+<!-- js判断ie6、7 -->
+<script type="text/javascript">
+$(document).ready(function(){
+	if(!+'\v1' && !'1'[0]){ 
+		 $("body").append("<div style='text-align: center; position:fixed;_position:absolute;z-index:11111; top:0; left:0; width:100%; background:#FEE; line-height: 30px; height: 30px; font-size:18px;'>当前ie浏览器版本过低，可能影响网站操作，推荐使用<a style='color:blue; text-decoration:underline' href='http://www.firefox.com.cn/' target='_blank'>Firefox浏览器</a>或<a style='color:blue; text-decoration:underline' href='http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html' target='_blank'>Chrome浏览器</a>对本站进行浏览！</div>");$(".top").css('margin-top','30px');
+		 } 	
+})
+</script>
+<!-- end js判断ie6、7 -->
+
+<script language="javascript">
+	/*cookie中id自动保存并清除cookie*/
+	/*判断是否有名为id的空间，如果有则把cookie中的id保存到隐藏控件中。*/
+	if($.cookie("f8a54c29a10e90f3c17807c911c125ba.id")!=null){
+		if($("#id").length>0){
+			$("#id").val($.cookie("f8a54c29a10e90f3c17807c911c125ba.id"));	
+		}
+		/*完成id处理后，清除名为id的cookie*/
+		
+		/*$.cookie("f8a54c29a10e90f3c17807c911c125ba.id",'',{ expires: -1, path: "/" })	*/
+	}					
+</script>
+<!-- end bottom-->
+
+
+
+
+<script charset="utf-8" src="regInformation_files/kindeditor.js"></script>
+<script charset="utf-8" src="regInformation_files/zh_CN.js"></script>
+<script type="text/javascript">
+              /*设置左侧菜单展开状态*/
+              ddaccordingchange("");
+              ddaccordingchange("21|22");
+
+              setPDAS("#province", "#city", "#area", "", 1, 0);
+              /*删除市区下拉选项*/
+              $('#city').closest('.select_box').children('ul.tag_options').find("li").remove();
+              $('#area').closest('.select_box').children('ul.tag_options').find("li").remove();
+              /*设置市区下拉框内容*/
+              $('#city').html('请选择城市');
+              $('#area').html('请选择地区');
+
+              change_tab(this, 2);
+
+              var editor1 = KindEditor.create('textarea[id="description"]', {
+                allowFileManager: true,
+                resizeType: 1, width: 580,
+                afterBlur: function () { this.sync(); },
+                afterChange: function () { this.sync(); },
+                afterCreate: function () { this.sync(); }
+              });
+              $(document).ready(function () {
+                $("#chge_nav_head li").click(function () {
+                  $("#chge_nav_head li").removeClass("chose");
+                  $(this).addClass("chose");
+                })
+                var temp = $("#chge_nav_footer li"); $("#chge_nav_footer li").each(function (index) {
+                  $(this).click(function () {
+                    $("#chge_nav_footer li.chose").removeClass("chose");
+                    $(this).addClass("chose"); $("#content li.conFocus").removeClass("conFocus");
+                    $("#content li:eq(" + index + ")").addClass("conFocus");
+                  });
+                });
+
+              })
+
+
+
+              /*底部tab页面切换js代码*/
+              function change_tab(e, m) {
+                $(e).parent().children('li').removeClass("chose");
+                $(e).addClass("chose");
+
+                /*
+                  if(m =='1'){
+                    $("#licence").show();  
+                    $("#certification").hide();
+                    $("#star_product").hide();
+                    $("#success_case").hide();
+                    $("#company_brand").hide();
+                    $("#company_honor").hide();
+                    $("#photo").hide(); 
+                  }else
+                */
+                if (m == '2') {
+                  $("#licence").hide();
+                  $("#certification").show();
+                  $("#star_product").hide();
+                  $("#success_case").hide();
+                  $("#company_brand").hide();
+                  $("#company_honor").hide();
+                  $("#photo").hide();
+                } else if (m == '3') {
+                  $("#licence").hide();
+                  $("#certification").hide();
+                  $("#star_product").show();
+                  $("#success_case").hide();
+                  $("#company_brand").hide();
+                  $("#company_honor").hide();
+                  $("#photo").hide();
+                } else if (m == '4') {
+                  $("#licence").hide();
+                  $("#certification").hide();
+                  $("#star_product").hide();
+                  $("#success_case").show();
+                  $("#company_brand").hide();
+                  $("#company_honor").hide();
+                  $("#photo").hide();
+                } else if (m == '5') {
+                  $("#licence").hide();
+                  $("#certification").hide();
+                  $("#star_product").hide();
+                  $("#success_case").hide();
+                  $("#company_brand").show();
+                  $("#company_honor").hide();
+                  $("#photo").hide();
+                } else if (m == '6') {
+                  $("#licence").hide();
+                  $("#certification").hide();
+                  $("#star_product").hide();
+                  $("#success_case").hide();
+                  $("#company_brand").hide();
+                  $("#company_honor").show();
+                  $("#photo").hide();
+                } else if (m == '7') {
+                  $("#licence").hide();
+                  $("#certification").hide();
+                  $("#star_product").hide();
+                  $("#success_case").hide();
+                  $("#company_brand").hide();
+                  $("#company_honor").hide();
+                  $("#photo").show();
+                }
+                getlist(m - 1, 1);
+              }
+
+
+
+              /*提交基本信息表单*/
+              function submit() {
+
+                if ($("#province").html() == '选择省/直辖市' && $("#province").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($("#city").html() == '请选择城市' && $("#city").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($("#area").html() == '请选择地区' && $("#area").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($.trim($("#address").val()) == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                //如果logo_id 不存在，默认为88
+                if ($.trim($("#logo_id").val()) == '') {
+                  $("#logo_id").val('88');
+                }
+
+                if ($.trim($("#idcard_id").val()) == '') {
+                  $("#idcard_id").val('88');
+                }
+
+                if ($.trim($("#card_id").val()) == '') {
+                  $("#card_id").val('88');
+                }
+
+                if ($.trim($("#name").val()) == '') {
+                  alert("公司名称不能为空");
+                  return false;
+                }
+                else if ($.trim($("#description").val()) == '') {
+                  alert("公司简介不能为空");
+                  return false;
+                }
+
+                else if ($.trim($("#logo_id").val()) == '') {
+                  alert("公司LOGO不能为空");
+                  return false;
+                }
+
+                else if ($("#type").attr("value") == '') {
+                  alert("请选择经销商类型");
+                  return false;
+                }
+                else if ($.trim($("#fund").val()) == '') {
+                  alert("注册资金不能为空");
+                  return false;
+                }
+                else if ($.trim($("#createyear").val()) == '') {
+                  alert("成立年份不能为空");
+                  return false;
+                }
+                else if ($.trim($("#operationperiod").val()) == '') {
+                  alert("经营期限不能为空");
+                  return false;
+                }
+                else if ($.trim($("#legalman").val()) == '') {
+                  alert("法人姓名不能为空");
+                  return false;
+                }
+                else if ($.trim($("#scope").val()) == '') {
+                  alert("经营范围");
+                  return false;
+                }
+                else if ($("#linktel1").val() == '区号' || $.trim($("#linktel1").val()) == '') {
+                  alert("联系电话不能为空");
+                  return false;
+                }
+                else if ($("#linktel2").val() == '固定电话' || $.trim($("#linktel2").val()) == '') {
+                  alert("联系电话不能为空");
+                  return false;
+                }
+                else if ($.trim($("#linkman").val()) == '') {
+                  alert("联系人不能为空");
+                  return false;
+                }
+                else if ($.trim($("#linkphone").val()) == '') {
+                  alert("联系人手机不能为空");
+                  return false;
+                }
+                //v2.0.1
+                else if ($(".area_selected_show").html().length < 10) {
+                  alert("请选择业务覆盖范围");
+                  return false;
+                }
+                else if ($(".material_selected_show").html().length < 10) {
+                  alert("请选择主营业务");
+                  return false;
+                }
+                else if ($.trim($("#licnumber").val()) == '') {
+                  alert("营业执照注册号不能为空");
+                  return false;
+                }
+                else if ($('#threeAttachs').attr('data-flag') == 'true') { //三证合一
+                  if ($.trim($("#licattach_id").val()) == '') {
+                    alert("三证不能为空");
+                    return false;
+                  }
+                }
+                else if ($('#threeAttachs').attr('data-flag') == 'false') {
+                  if ($.trim($("#licattach_id").val()) == '') {
+                    alert("营业执照不能为空");
+                    return false;
+                  } else if ($.trim($("#taxattach_id").val()) == '') {
+                    alert("税务登记证不能为空");
+                    return false;
+                  }
+                  else if ($.trim($("#orgattach_id").val()) == '') {
+                    alert("组织机构代码证不能为空");
+                    return false;
+                  }
+                }
+                else if ($("#refereetype").attr('value') == '') {
+                  alert("请选择推荐人选项");
+                  return false;
+                }
+                else if (parseInt($("#refereetype").attr('value')) > 1 && ($.trim($("#referee").val()) == '请填写推荐人信息' || $.trim($("#referee").val()) == '')) {
+                  alert("请填写推荐人信息");
+                  $('#referee').focus();
+                  return false;
+                }
+                else if ($.trim($("#address").val()) == '') {
+                  alert("营业地址不能为空");
+                  return false;
+                }
+                else if ($.trim($("#idcard_id").val()) == '') {
+                  alert("身份证正面不能为空");
+                  return false;
+                }
+                else if ($.trim($("#card_id").val()) == '') {
+                  alert("身份证反面不能为空");
+                  return false;
+                }
+                else if ($.trim($(".business").val()) == '') {
+                  alert("企业类型不能为空");
+                  return false;
+                }
+                var supplier_id = $("#supplier_id").val();
+                var name = nameRep($("#name").val());
+                var description = $("#description").val();
+                var logo_id = $("#logo_id").val();
+                if ($('#threeAttachs').attr('data-flag') == 'true') {  //三证合一
+                  var licattach_id = $("#licattach_id").val();
+                  var taxattach_id = $("#licattach_id").val();
+                  var orgattach_id = $("#licattach_id").val();
+                } else {
+                  var licattach_id = $("#licattach_id").val();
+                  var taxattach_id = $("#taxattach_id").val();
+                  var orgattach_id = $("#orgattach_id").val();
+                }
+                var type = $("#type").attr("value");
+                var fund = $("#fund").val();
+                var createyear = $("#createyear").val();
+                var operationperiod = $("#operationperiod").val();
+                var legalman = $("#legalman").val();
+                var scope = $("#scope").val();
+                var licnumber = $("#licnumber").val();
+                //var linktel       = $("#linktel1").val()+"-"+$("#linktel2").val();
+                var linktel1 = $("#linktel1").val();
+                var linktel2 = $("#linktel2").val();
+                var linktel = '';
+                if (linktel1 != '区号') {
+                  linktel = linktel1;
+                }
+                if (linktel2 != '固定电话') {
+                  linktel = linktel + '-' + linktel2;
+                }
+                var linkman = $("#linkman").val();
+                var linkpost = $("#linkpost").val();
+                var linkphone = $("#linkphone").val();
+                var province = $("#province").html();
+                var city = $("#city").html();
+                var area = $("#area").html();
+                var address = $("#address").val();
+                var refereetype = $("#refereetype").attr('value');
+                var referee = $("#referee").val();
+                var materialclass = new Array();
+                var supplygoods = new Array();
+                var supplyarea = new Array();
+                var business = $(".business").val();
+                var idcard_id = $("#idcard_id").val();
+                var card_id = $("#card_id").val();
+
+                //是否为一般纳税人
+                var isgt = $('input[name="taxpayer"]').filter(':checked').val();
+
+                if (province == '选择省/直辖市') {
+                  province = '';
+                }
+
+                if (city == '请选择城市') {
+                  city = '';
+                }
+
+                if (area == '请选择地区') {
+                  area = '';
+                }
+
+                if (referee == '请填写推荐人信息') { referee = ''; }
+
+                $(".area_selected_show").eq(0).find("a").each(function () {
+                  supplyarea.push($(this).html());
+                });
+
+                //if(supplyarea.length==0) {alert('请选择业务覆盖范围！');return;}
+
+                $(".material_selected_show").eq(0).find("a").each(function () {
+                  supplygoods.push($(this).html());
+                });
+                //if(supplygoods.length==0) {alert('请选择主营物资类别！');return;}
+
+                $(".material_selected_show_fy").eq(0).find("a").each(function () {
+                  materialclass.push($(this).html());
+                });
+
+                if (description == '') {
+                  description = '本公司成立于' + createyear + '年，注册资金' + fund + '万，主要经营范围为' + JSON.stringify(supplygoods);
+                }
+
+                var client = new HproseHttpClient('Supplier.html', ['regInformationHandle']);
+                client.regInformationHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, name, description, logo_id, licattach_id, taxattach_id, orgattach_id, type, fund, createyear, operationperiod, legalman, scope, licnumber, linktel, linkman, linkpost, linkphone, province, city, area, address, JSON.stringify(materialclass), refereetype, referee, JSON.stringify(supplyarea), JSON.stringify(supplygoods), isgt, business, idcard_id, card_id, function (result) {
+                  //            alert(result);
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj['success'] == 1) {
+                    /*将后台插入数据库的供应商id返回回来给当前页面supplier_id赋值*/
+                    $("#supplier_id").val(jsonobj['supplier_id']);
+                    //document.location = "/index.php/Supplier/Index/index";
+                    document.location = "/index.php/Supplier/Index/invoiceTip";  //----------开票信息提示页面
+                  } else {
+                    alert(jsonobj['info']);
+                  }
+
+
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+
+              }
+
+              /*基本信息表单验证*/
+              function check() {
+                if ($("#province").html() == '选择省/直辖市' && $("#province").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($("#city").html() == '请选择城市' && $("#city").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($("#area").html() == '请选择地区' && $("#area").html() == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                if ($.trim($("#address").val()) == '') {
+                  alert("请填写完整省市区");
+                  return false;
+                }
+                //如果logo_id 不存在，默认为88
+                if ($.trim($("#logo_id").val()) == '') {
+                  $("#logo_id").val('88')
+                }
+
+                if ($.trim($("#name").val()) == '') {
+                  alert("公司名称不能为空");
+                  return false;
+                }
+                else if ($.trim($("#description").val()) == '') {
+                  alert("公司简介不能为空");
+                  return false;
+                }
+                /*
+                  else if( $.trim($("#logo_id").val())==''){
+                    alert("公司LOGO不能为空");
+                    return false;
+                  }
+                */
+                else if ($("#type").attr("value") == '') {
+                  alert("请选择企业类型");
+                  return false;
+                }
+                else if ($.trim($("#fund").val()) == '') {
+                  alert("注册资金不能为空");
+                  return false;
+                }
+                else if ($.trim($("#createyear").val()) == '') {
+                  alert("成立年份不能为空");
+                  return false;
+                }
+                else if ($.trim($("#operationperiod").val()) == '') {
+                  alert("经营期限不能为空");
+                  return false;
+                }
+                else if ($.trim($("#legalman").val()) == '') {
+                  alert("法人姓名不能为空");
+                  return false;
+                }
+                else if ($.trim($("#scope").val()) == '') {
+                  alert("经营范围");
+                  return false;
+                }
+                else if ($("#linktel1").val() == '区号' || $.trim($("#linktel1").val()) == '') {
+                  alert("联系电话不能为空");
+                  return false;
+                }
+                else if ($("#linktel2").val() == '固定电话' || $.trim($("#linktel2").val()) == '') {
+                  alert("联系电话不能为空");
+                  return false;
+                }
+                else if ($.trim($("#linkman").val()) == '') {
+                  alert("联系人不能为空");
+                  return false;
+                }
+                else if ($.trim($("#linkphone").val()) == '') {
+                  alert("联系人手机不能为空");
+                  return false;
+                }
+                //v2.0.1
+                else if ($(".area_selected_show").html().length < 10) {
+                  alert("请选择业务覆盖范围");
+                  return false;
+                }
+                else if ($(".material_selected_show").html().length < 10) {
+                  alert("请选择主营业务");
+                  return false;
+                }
+                else if ($.trim($("#licnumber").val()) == '') {
+                  alert("营业执照注册号不能为空");
+                  return false;
+                }
+                else if ($.trim($("#licattach_id").val()) == '') {
+                  alert("营业执照不能为空");
+                  return false;
+                }
+                else if ($.trim($("#taxattach_id").val()) == '') {
+                  alert("税务登记证不能为空");
+                  return false;
+                }
+                else if ($.trim($("#orgattach_id").val()) == '') {
+                  alert("组织机构代码证不能为空");
+                  return false;
+                }
+                else if ($("#refereetype").attr('value') == '') {
+                  alert("请选择推荐人选项");
+                  return false;
+                }
+                else if (parseInt($("#refereetype").attr('value')) > 1 && ($.trim($("#referee").val()) == '请填写推荐人信息' || $.trim($("#referee").val()) == '')) {
+                  alert("请填写推荐人信息");
+                  $('#referee').focus();
+                  return false;
+                }
+                else if ($.trim($("#address").val()) == '') {
+                  alert("营业地址不能为空");
+                  return false;
+                }
+                else if ($.trim($("#idcard_id").val()) == '') {
+                  alert("身份证正面不能为空");
+                  return false;
+                }
+                else if ($.trim($("#card_id").val()) == '') {
+                  alert("身份证反面不能为空");
+                  return false;
+                }
+                else if ($.trim($(".business").val()) == '') {
+                  alert("企业类型不能为空");
+                  return false;
+                }
+                else {
+                  return true;
+                }
+
+              }
+
+              //替换()为（）,替换空格为空
+              function nameRep(str) {
+                //先去掉前后空格
+                var str = str.trim();
+                //定义替换英文小括号为中文小括号的正则,定义空格的正则
+                var reg = /[\(]/g, reg2 = /[\)]/g, reg3 = /\s*/g;
+                //替换小括号后的字符串
+                newStr = str.replace(reg, "（").replace(reg2, "）").replace(reg3, "");
+                return newStr;
+              }
+
+              //添加证书等信息的 弹出页面点击取消按钮后删除append出来的添加项
+              function remove_tr() {
+
+                $("#certificate_detail").children().remove();
+
+                $("#star_id").val('');
+                $("#star").val('');
+                $("#star_detail").children().remove();
+                $("#product_name").val('');
+                $("#model").val('');
+                $("#place").val('');
+                $("#unit").val('');
+                $("#brand").val('');
+                $("#para").val('');
+                $("#description_star").val('');
+
+                $("#edit_star_id").val('');
+                $("#edit_star").val('');
+                $("#edit_star_detail").children().remove();
+                $("#edit_product_name").val('');
+                $("#edit_model").val('');
+                $("#edit_place").val('');
+                $("#edit_unit").val('');
+                $("#edit_brand").val('');
+                $("#edit_para").val('');
+                $("#edit_description_star").val('');
+
+                $("#case_id").val('');
+                $("#case").val('');
+                $("#case_detail").children().remove();
+                $("#case_name").val('');
+                $("#firstparty").val('');
+                $("#province_case").attr("value", '');
+                $("#city_case").attr("value", '');
+                $("#area_case").attr("value", '');
+                $("#province_case").html('');
+                $("#city_case").html('');
+                $("#area_case").html('');
+
+                $("#edit_case_id").val('');
+                $("#edit_case").val('');
+                $("#edit_case_detail").children().remove();
+                $("#edit_case_name").val('');
+                $("#edit_firstparty").val('');
+                $("#edit_province_case").attr("value", '');
+                $("#edit_city_case").attr("value", '');
+                $("#edit_area_case").attr("value", '');
+                $("#edit_province_case").html('');
+                $("#edit_city_case").html('');
+                $("#edit_area_case").html('');
+
+                $("#brand_detail").children().remove();
+                $("#honor_detail").children().remove();
+                $("#photo_detail").children().remove();
+
+
+              }
+
+
+              function submit_other(e) {
+                /*新增资质证书*/
+                if (e == 1) {
+                  //取值
+                  var is_submit = true;
+                  var times = 0;
+                  var supplier_id = $("#supplier_id").val();
+                  var id = '';
+                  var title = '';
+                  var ischecked = '';
+                  var certificate = new Array();
+                  var i = 0;
+                  $("#certificate_detail").find("div").each(function () {
+                    times++;
+                    id = '';
+                    title = '';
+                    ischecked = 0;
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      else if ($(this).attr('type') == 'text' && $.trim($(this).val()) != '') {
+                        title = $.trim($(this).val());
+                      }
+                      else if ($(this).attr('type') == 'checkbox' && $(this).prop('checked') == false) {
+                        ischecked = 1;
+                      }
+                    });
+                    /*if(id!='' && title!='' && ischecked == 1){*/
+                    if (id != '' && title != '') {
+                      certificate[i] = new Array();
+                      certificate[i].push(id);
+                      certificate[i].push(title);
+                      /*if($(this).attr('type')=='checkbox' && $(this).is(":checked")){
+                        certificate[i].push(0);
+                      }else{
+                        certificate[i].push(1);
+                      }*/
+                      certificate[i].push(ischecked);
+
+                      i++;
+                    } else {
+                      is_submit = false;
+                    }
+                  });
+                  if (times == 0) { is_submit = false; }
+                  if (is_submit) {
+                    //接口数据提交,第一个参数1表示告知服务器端这个事新增资质证书
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(certificate), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+
+                }
+                /*提交新增明星产品*/
+                else if (e == 2) {
+                  //取值
+                  var is_submit = true;
+                  var supplier_id = $("#supplier_id").val();
+                  var product_name = $("#product_name").val();
+                  if ($.trim(product_name) == '') {
+                    is_submit = false;
+                  }
+                  var star = new Array();
+                  var i = 0;
+
+                  $("#star_detail").find("div").each(function () {
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      if (id != '') {
+                        star.push(id);
+                      }
+                    });
+                  });
+
+
+                  var model = $("#model").val();
+                  if ($.trim(model) == '') {
+                    is_submit = false;
+                  }
+                  var place = $("#place").val();
+                  var unit = $("#unit").val();
+                  if ($.trim(unit) == '') {
+                    is_submit = false;
+                  }
+                  var brand = $("#brand").val();
+                  var para = $("#para").val();
+                  var description = $("#description_star").val();
+                  if ($.trim(description) == '') {
+                    is_submit = false;
+                  }
+                  //将取值封装进数组
+                  var content = new Array();
+                  content.push(product_name);
+                  content.push(JSON.stringify(star));
+                  content.push(model);
+                  content.push(place);
+                  content.push(unit);
+                  content.push(brand);
+                  content.push(para);
+                  content.push(description);
+
+                  if (is_submit) {
+                    //接口数据提交,第一个参数2表示告知服务器端这个事新增明星产品
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(content), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+                /*提交新增成功案例*/
+                else if (e == 3) {
+                  //取值
+                  var is_submit = true;
+                  var supplier_id = $("#supplier_id").val();
+                  var case_name = $("#case_name").val();
+                  if ($.trim(case_name) == '') {
+                    is_submit = false;
+                  }
+                  var mycase = new Array();
+                  var i = 0;
+
+                  $("#case_detail").find("div").each(function () {
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      if (id != '') {
+                        mycase.push(id);
+                      }
+                    });
+                  });
+
+                  var firstparty = $("#firstparty").val();
+                  if ($.trim(firstparty) == '') {
+                    is_submit = false;
+                  }
+                  var province_case = $("#province_case").html();//$("#province_case").attr("value");
+                  var city_case = $("#city_case").html(); //$("#city_case").attr("value");
+                  var area_case = $("#area_case").html(); //$("#area_case").attr("value");
+
+                  if ($.trim(province_case) == '' && $.trim(city_case) == '' && $.trim(area_case) == '') {
+                    is_submit = false;
+                  }
+                  //将取值封装进数组
+                  var content = new Array();
+                  content.push(case_name);
+                  content.push(JSON.stringify(mycase));
+                  content.push(firstparty);
+                  content.push(province_case);
+                  content.push(city_case);
+                  content.push(area_case);
+
+                  if (is_submit) {
+                    //接口数据提交,第一个参数2表示告知服务器端这个事新增明星产品
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(content), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+                /*提交新增企业品牌*/
+                else if (e == 4) {
+                  //取值
+                  var is_submit = true;
+                  var times = 0;
+                  var supplier_id = $("#supplier_id").val();
+                  var id = '';
+                  var title = '';
+                  var ischecked = '';
+                  var certificate = new Array();
+                  var i = 0;
+                  $("#brand_detail").find("div").each(function () {
+                    times++;
+                    id = '';
+                    title = '';
+                    ischecked = 0;
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      else if ($(this).attr('type') == 'text' && $.trim($(this).val()) != '') {
+                        title = $.trim($(this).val());
+                      }
+                      else if ($(this).attr('type') == 'checkbox' && $(this).prop('checked') == false) {
+                        ischecked = 1;
+                      }
+                    });
+                    /*if(id!='' && title!='' && ischecked == 1){*/
+                    if (id != '' && title != '') {
+                      certificate[i] = new Array();
+                      certificate[i].push(id);
+                      certificate[i].push(title);
+                      /*if($(this).attr('type')=='checkbox' && $(this).is(":checked")){
+                        certificate[i].push(0);
+                      }else{
+                        certificate[i].push(1);
+                      }*/
+                      certificate[i].push(ischecked);
+
+                      i++;
+                    } else {
+                      is_submit = false;
+                    }
+                  });
+                  if (times == 0) { is_submit = false; }
+                  if (is_submit) {
+                    //接口数据提交,第一个参数1表示告知服务器端这个事新增资质证书
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(certificate), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+                /*提交新增企业荣誉*/
+                else if (e == 5) {
+                  //取值
+                  var is_submit = true;
+                  var times = 0;
+                  var supplier_id = $("#supplier_id").val();
+                  var id = '';
+                  var title = '';
+                  var ischecked = '';
+                  var certificate = new Array();
+                  var i = 0;
+                  $("#honor_detail").find("div").each(function () {
+                    times++;
+                    id = '';
+                    title = '';
+                    ischecked = 0;
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      else if ($(this).attr('type') == 'text' && $.trim($(this).val()) != '') {
+                        title = $.trim($(this).val());
+                      }
+                      else if ($(this).attr('type') == 'checkbox' && $(this).prop('checked') == false) {
+                        ischecked = 1;
+                      }
+                    });
+                    /*if(id!='' && title!='' && ischecked == 1){*/
+                    if (id != '' && title != '') {
+                      certificate[i] = new Array();
+                      certificate[i].push(id);
+                      certificate[i].push(title);
+                      /*if($(this).attr('type')=='checkbox' && $(this).is(":checked")){
+                        certificate[i].push(0);
+                      }else{
+                        certificate[i].push(1);
+                      }*/
+                      certificate[i].push(ischecked);
+
+                      i++;
+                    } else {
+                      is_submit = false;
+                    }
+                  });
+                  if (times == 0) { is_sumbit = false; }
+                  if (is_submit) {
+                    //接口数据提交,第一个参数1表示告知服务器端这个事新增资质证书
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(certificate), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+                /*提交新增企业相册*/
+                else if (e == 6) {
+                  //取值
+                  var is_submit = true;
+                  var times = 0;
+                  var supplier_id = $("#supplier_id").val();
+                  var id = '';
+                  var title = '';
+                  var ischecked = '';
+                  var certificate = new Array();
+                  var i = 0;
+                  $("#photo_detail").find("div").each(function () {
+                    times++;
+                    id = '';
+                    title = '';
+                    ischecked = 0;
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      else if ($(this).attr('type') == 'text' && $.trim($(this).val()) != '') {
+                        title = $.trim($(this).val());
+                      }
+                      else if ($(this).attr('type') == 'checkbox' && $(this).prop('checked') == false) {
+                        ischecked = 1;
+                      }
+                    });
+                    /*if(id!='' && title!='' && ischecked == 1){*/
+                    if (id != '' && title != '') {
+                      certificate[i] = new Array();
+                      certificate[i].push(id);
+                      certificate[i].push(title);
+                      /*if($(this).attr('type')=='checkbox' && $(this).is(":checked")){
+                        certificate[i].push(0);
+                      }else{
+                        certificate[i].push(1);
+                      }*/
+                      certificate[i].push(ischecked);
+
+                      i++;
+                    } else {
+                      is_submit = false;
+                    }
+                  });
+                  if (times == 0) { is_submit = false; }
+                  if (is_submit) {
+                    //接口数据提交,e表示告知服务器端这个事新增资质证书
+                    var client = new HproseHttpClient('Supplier.html', ['addRegAttachmentHandle']);
+                    client.addRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, JSON.stringify(certificate), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("添加成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+
+              }
+
+
+
+
+              /*将后台接口查询到的供应商附件列表信息返回回来显示在前端页面*/
+              //第二个参数表示供应商id，第三个参数表示需要查询哪个列表，0表示所有列表，第4个参数表示页书
+              function attachment_list(supplier_id, type, page, search) {
+
+                var client = new HproseHttpClient('Supplier.html', ['showRegAttachmentList']);
+                client.showRegAttachmentList("f8a54c29a10e90f3c17807c911c125ba", supplier_id, type, page, search, function (result) {
+                  //
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj['success'] == 1) {
+                    var certificate = jsonobj['certificate'];
+                    var certificate_sum = jsonobj['certificate_sum'];
+                    var star = jsonobj['star'];
+                    var star_sum = jsonobj['star_sum'];
+                    var mycase = jsonobj['case'];
+                    var case_sum = jsonobj['case_sum'];
+                    var brand = jsonobj['brand'];
+                    var brand_sum = jsonobj['brand_sum'];
+                    var honor = jsonobj['honor'];
+                    var honor_sum = jsonobj['honor_sum'];
+                    var photo = jsonobj['photo'];
+                    var photo_sum = jsonobj['photo_sum'];
+                    if (type == 0 || type == 1) {
+                      //显示资质证书
+                      for (var i = 0; i < certificate.length; i++) {
+                        var certificate_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td>" + certificate[i]['title'] + "</td><td><img src='" + certificate[i]['url'] + "' class=\"liebiao_logo\" alt='" + certificate[i]['title'] + "' title='" + certificate[i]['title'] + "' /></td><td>" + isdisplay(certificate[i]['display']) + "</td><td><a onClick=\"del_confirm(" + 1 + ", " + certificate[i]['id'] + ")\">删除</a></td></tr>";
+                        $("#certificate_list_id").append(certificate_html);
+                      }
+                      pagelist(1, certificate_sum, page);
+                    }
+                    if ((type == 0 || type == 2) && (star != null) && (star.length > 0)) {
+                      //显示明星产品
+                      for (var i = 0; i < star.length; i++) {
+                        var star_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td><img src='" + star[i]['url'] + "' class=\"liebiao_logo\" alt='" + star[i]['name'] + "' title='" + star[i]['name'] + "' /></td><td>" + star[i]['name'] + "</td><td>" + star[i]['model'] + "</td><td>" + star[i]['para'] + "</td><td>" + star[i]['brand'] + "</td><td>" + star[i]['place'] + "</td><td>" + star[i]['unit'] + "</td><td>" + star[i]['description'] + "</td><td><a onClick='edit_dialog(" + 2 + ", " + JSON.stringify(star[i]) + ")'>编辑</a></td></tr>";
+                        $("#star_list_id").append(star_html);
+                      }
+                      pagelist(2, star_sum, page);
+                    }
+                    if ((type == 0 || type == 3) && (mycase != null) && (mycase.length > 0)) {
+                      //显示成功案例
+                      for (var i = 0; i < mycase.length; i++) {
+                        var case_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td>" + mycase[i]['title'] + "</td><td>" + mycase[i]['firstparty'] + "</td><td>" + mycase[i]['province'] + mycase[i]['city'] + mycase[i]['area'] + "</td><td><img src='" + mycase[i]['url'] + "' class=\"liebiao_logo\" alt='" + mycase[i]['title'] + "' title='" + mycase[i]['title'] + "' /></td><td><a onClick='edit_dialog(" + 3 + ", " + JSON.stringify(mycase[i]) + ")'>编辑</a></td></tr>";
+                        $("#case_list_id").append(case_html);
+                      }
+                      pagelist(3, case_sum, page);
+                    }
+                    if ((type == 0 || type == 4) && (brand != null) && (brand.length > 0)) {
+                      //显示企业品牌
+                      for (var i = 0; i < brand.length; i++) {
+                        var brand_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td>" + brand[i]['title'] + "</td><td><img src='" + brand[i]['url'] + "' class=\"liebiao_logo\" alt='" + brand[i]['title'] + "' title='" + brand[i]['title'] + "' /></td><td>" + isdisplay(brand[i]['display']) + "</td><td><a onClick=\"del_confirm(" + 4 + ", " + brand[i]['id'] + ")\">删除</a></td></tr>";
+                        $("#brand_list_id").append(brand_html);
+                      }
+                      pagelist(4, brand_sum, page);
+                    }
+                    if ((type == 0 || type == 5) && (honor != null) && (honor.length > 0)) {
+                      //显示企业荣誉
+                      for (var i = 0; i < honor.length; i++) {
+                        var honor_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td>" + honor[i]['title'] + "</td><td><img src='" + honor[i]['url'] + "' class=\"liebiao_logo\" alt='" + honor[i]['title'] + "' title='" + honor[i]['title'] + "' /></td><td>" + isdisplay(honor[i]['display']) + "</td><td><a onClick=\"del_confirm(" + 5 + ", " + honor[i]['id'] + ")\">删除</a></td></tr>";
+                        $("#honor_list_id").append(honor_html);
+                      }
+                      pagelist(5, honor_sum, page);
+                    }
+                    if ((type == 0 || type == 6) && (photo != null) && (photo.length > 0)) {
+                      //显示企业相册
+                      for (var i = 0; i < photo.length; i++) {
+                        var photo_html = "<tr><td style='display:none;'>" + parseInt(page * 5 - (5 - i) + 1) + "</td><td>" + photo[i]['title'] + "</td><td><img src='" + photo[i]['url'] + "' class=\"liebiao_logo\" alt='" + photo[i]['title'] + "' title='" + photo[i]['title'] + "' /></td><td>" + isdisplay(photo[i]['display']) + "</td><td><a onClick=\"del_confirm(" + 6 + ", " + photo[i]['id'] + ")\">删除</a></td></tr>";
+                        $("#photo_list_id").append(photo_html);
+                      }
+                      pagelist(6, photo_sum, page);
+                    }
+
+                  }
+
+                }, function (name, err) {
+                  //
+                });
+
+
+              }
+
+              function isdisplay(e) {
+                if (e == 1) {
+                  return '否';
+                } else {
+                  return '是';
+                }
+              }
+
+              //删除附件
+              function del_confirm(type, attach_id) {
+
+                if (!confirm("确认要删除？")) {
+                  window.event.returnValue = false;
+                } else {
+                  var supplier_id = $("#supplier_id").val();
+                  var client = new HproseHttpClient('Supplier.html', ['delRegAttachmentHandle']);
+                  client.delRegAttachmentHandle("f8a54c29a10e90f3c17807c911c125ba", type, supplier_id, attach_id, function (result) {
+                    //
+                    var jsonobj = JSON.parse(result);
+                    if (jsonobj['success'] == 1) {
+                      alert("删除成功");
+                      getlist(type, 1);
+                      hide_pop('dv_pop');
+                      remove_tr();
+                    }
+                  }, function (name, err) {
+                    /*alert(err);*/
+                  });
+                }
+              }
+
+
+              //明星产品和成功案例的编辑页面
+              function edit_dialog(type, list_item) {
+                if (type == 2) {
+                  show_pop('edit_dv_pop2', true);
+
+                  $("#item_star_id").val(list_item.id);
+                  $("#edit_product_name").val(list_item.name);
+                  $("#edit_model").val(list_item.model);
+                  $("#edit_place").val(list_item.place);
+                  $("#edit_unit").val(list_item.unit);
+                  $("#edit_brand").val(list_item.brand);
+                  $("#edit_para").val(list_item.para);
+                  $("#edit_description_star").val(list_item.description);
+
+                  //获取图片信息
+                  var supplier_id = $("#supplier_id").val();
+                  var client = new HproseHttpClient('Supplier.html', ['getAttachPictureList']);
+                  client.getAttachPictureList("f8a54c29a10e90f3c17807c911c125ba", supplier_id, list_item.picture, function (result) {
+                    //
+                    var jsonobj = JSON.parse(result);
+                    if (jsonobj['success'] == 1) {
+                      var picture = jsonobj['picture'];
+                      for (var i = 0; i < picture.length; i++) {
+                        upload_star_case("edit_star", picture[i]['id'], picture[i]['title'], picture[i]['size'], picture[i]['url']);
+                      }
+                    }
+                  }, function (name, err) {
+                    /*alert(err);*/
+                  });
+
+                }
+                else if (type == 3) {
+                  setPDAS('#edit_province_case', '#edit_city_case', '#edit_area_case', '', 1, 0);
+                  $('#edit_city_case').closest('.select_box').children('ul.tag_options').find('li').remove();
+                  $('#edit_area_case').closest('.select_box').children('ul.tag_options').find('li').remove();
+                  $('#edit_city_case').html('请选择城市');
+                  $('#edit_area_case').html('请选择地区');
+                  show_pop('edit_dv_pop3', true);
+
+                  $("#item_case_id").val(list_item.id);
+                  $("#edit_case_name").val(list_item.title);
+                  $("#edit_firstparty").val(list_item.firstparty);
+                  /*
+                    $("#edit_province_case").attr("value", list_item.province);
+                    $("#edit_city_case").attr("value", list_item.city);
+                    $("#edit_area_case").attr("value", list_item.area);
+                  */
+                  $("#edit_province_case").html(list_item.province);
+                  $("#edit_city_case").html(list_item.city);
+                  $("#edit_area_case").html(list_item.area);
+
+                  //获取图片信息
+                  var supplier_id = $("#supplier_id").val();
+                  var client = new HproseHttpClient('Supplier.html', ['getAttachPictureList']);
+                  client.getAttachPictureList("f8a54c29a10e90f3c17807c911c125ba", supplier_id, list_item.picture, function (result) {
+                    //
+                    var jsonobj = JSON.parse(result);
+                    if (jsonobj['success'] == 1) {
+                      var picture = jsonobj['picture'];
+                      for (var i = 0; i < picture.length; i++) {
+                        upload_star_case("edit_case", picture[i]['id'], picture[i]['title'], picture[i]['size'], picture[i]['url']);
+                      }
+                    }
+                  }, function (name, err) {
+                    /*alert(err);*/
+                  });
+
+                }
+
+              }
+
+
+
+              //明星产品、成功案例的编辑提交
+              function edit_submit_other(e) {
+
+                /*提交编辑明星产品*/
+                if (e == 2) {
+                  //取值
+                  var item_star_id = $("#item_star_id").val();
+                  var is_submit = true;
+                  var supplier_id = $("#supplier_id").val();
+                  var product_name = $("#edit_product_name").val();
+                  if ($.trim(product_name) == '') {
+                    is_submit = false;
+                  }
+                  var star = new Array();
+                  var i = 0;
+                  $("#edit_star_detail").find("div").each(function () {
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      if (id != '') {
+                        star.push(id);
+                      }
+                    });
+                  });
+                  if (!(star.length > 0)) {
+                    is_submit = false;
+                  }
+                  var model = $("#edit_model").val();
+                  if ($.trim(model) == '') {
+                    is_submit = false;
+                  }
+                  var place = $("#edit_place").val();
+                  var unit = $("#edit_unit").val();
+                  if ($.trim(unit) == '') {
+                    is_submit = false;
+                  }
+                  var brand = $("#edit_brand").val();
+                  var para = $("#edit_para").val();
+                  var description = $("#edit_description_star").val();
+                  if ($.trim(description) == '') {
+                    is_submit = true;
+                  }
+                  //将取值封装进数组
+                  var content = new Array();
+                  content.push(product_name);
+                  content.push(JSON.stringify(star));
+                  content.push(model);
+                  content.push(place);
+                  content.push(unit);
+                  content.push(brand);
+                  content.push(para);
+                  content.push(description);
+
+                  if (is_submit) {
+                    //接口数据提交,第一个参数2表示告知服务器端这个事新增明星产品
+                    var client = new HproseHttpClient('Supplier.html', ['editRegStarCaseHandle']);
+                    client.editRegStarCaseHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, item_star_id, JSON.stringify(content), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("编辑成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+                /*提交编辑成功案例*/
+                else if (e == 3) {
+                  //取值
+                  var item_case_id = $("#item_case_id").val();
+                  var is_submit = true;
+                  var supplier_id = $("#supplier_id").val();
+                  var case_name = $("#edit_case_name").val();
+                  if ($.trim(case_name) == '') {
+                    is_submit = false;
+                  }
+                  var mycase = new Array();
+                  var i = 0;
+
+                  $("#edit_case_detail").find("div").each(function () {
+                    $(this).find("input").each(function () {
+                      if ($(this).attr('type') == 'hidden' && $.trim($(this).val()) != '') {
+                        id = $(this).val();
+                      }
+                      if (id != '') {
+                        mycase.push(id);
+                      }
+                    });
+                  });
+
+                  var firstparty = $("#edit_firstparty").val();
+                  if ($.trim(firstparty) == '') {
+                    is_submit = false;
+                  }
+                  /*
+                    var province_case    = $("#edit_province_case").attr("value");
+                    var city_case        = $("#edit_city_case").attr("value");
+                    var area_case        = $("#edit_area_case").attr("value");
+                    */
+                  var province_case = $("#edit_province_case").html();
+                  var city_case = $("#edit_city_case").html();
+                  var area_case = $("#edit_area_case").html();
+                  if ($.trim(province_case) == '' && $.trim(city_case) == '' && $.trim(area_case) == '') {
+                    is_submit = false;
+                  }
+                  //将取值封装进数组
+                  var content = new Array();
+                  content.push(case_name);
+                  content.push(JSON.stringify(mycase));
+                  content.push(firstparty);
+                  content.push(province_case);
+                  content.push(city_case);
+                  content.push(area_case);
+
+                  if (is_submit) {
+                    //接口数据提交,第一个参数2表示告知服务器端这个事新增明星产品
+                    var client = new HproseHttpClient('Supplier.html', ['editRegStarCaseHandle']);
+                    client.editRegStarCaseHandle("f8a54c29a10e90f3c17807c911c125ba", e, supplier_id, item_case_id, JSON.stringify(content), function (result) {
+                      //
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj['success'] == 1) {
+                        alert("编辑成功");
+                        hide_pop('dv_pop');
+                        remove_tr();
+                        getlist(e, 1);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+                  } else {
+                    alert("信息填写不正确，请重新输入！！");
+                  }
+                }
+
+
+              }
+
+
+
+              //分页
+              function pagelist(type, count, page) {
+                if (!count > 0) return false;
+                if (type == 1) {
+                  $('#certificate_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#certificate_page').append('<div class="certificate_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="certificate_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="certificate_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.certificate_mainpage').append(pagelist);
+                }
+                else if (type == 2) {
+                  $('#star_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#star_page').append('<div class="star_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="star_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="star_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.star_mainpage').append(pagelist);
+                }
+                else if (type == 3) {
+                  $('#case_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#case_page').append('<div class="case_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="case_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="case_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.case_mainpage').append(pagelist);
+                }
+                else if (type == 4) {
+                  $('#brand_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#brand_page').append('<div class="brand_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="brand_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="brand_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.brand_mainpage').append(pagelist);
+                }
+                else if (type == 5) {
+                  $('#honor_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#honor_page').append('<div class="honor_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="honor_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="honor_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.honor_mainpage').append(pagelist);
+                }
+                else if (type == 6) {
+                  $('#photo_page').html('');
+                  var finpage = Math.ceil(count / 5);
+                  if (page > finpage) {
+                    page = finpage;
+                  }
+                  var prepage = page - 1;
+                  var nextpage = page + 1;
+                  var allcount = count;
+
+                  $('#photo_page').append('<div class="photo_mainpage"></div><div class="right"><div class="left moveto"> 转至第&nbsp;&nbsp;<input type="text" class="to_pge" id="photo_page_jump_index" > &nbsp;&nbsp;页&nbsp;&nbsp;</div><a href="#" class="home_p right" onclick="javascript:jumppage(' + type + ')"> 确定</a><input type="hidden" id="photo_fin" value=' + finpage + '></div>');
+                  var pagelist = '<span class="hui" style="padding-right:10px;">共' + allcount + '条</span>';
+
+                  if (page > 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + prepage + ')">上一页</a><a href="javascript:getlist(' + type + ', ' + prepage + ')">' + prepage + '</a>';
+                  }
+                  pagelist += '<a class="current">' + page + '</a>';
+                  if ((finpage - nextpage) >= 1) {
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + nextpage + ')">' + nextpage + '</a>';
+                  }
+                  if ((finpage - nextpage) >= 2) {
+                    pagelist += '<span>... </span>';
+                  }
+                  if (page < finpage)
+                    pagelist += '<a href="javascript:getlist(' + type + ', ' + finpage + ')">' + finpage + '</a><a href="javascript:getlist(' + type + ', ' + nextpage + ')">下一页</a>';
+
+                  $('.photo_mainpage').append(pagelist);
+                }
+
+
+              }
+
+              /*点击分页页数以后显示新的列表*/
+              function getlist(type, page, search) {
+                if (type == 1) {
+                  $('#certificate_list_id').html('');
+                  $('#certificate_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+                else if (type == 2) {
+                  $('#star_list_id').html('');
+                  $('#star_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+                else if (type == 3) {
+                  $('#case_list_id').html('');
+                  $('#case_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+                else if (type == 4) {
+                  $('#brand_list_id').html('');
+                  $('#brand_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+                else if (type == 5) {
+                  $('#honor_list_id').html('');
+                  $('#honor_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+                else if (type == 6) {
+                  $('#photo_list_id').html('');
+                  $('#photo_page').html('');
+                  var supplier_id = $("#supplier_id").val();
+                  attachment_list(supplier_id, type, page, search);
+                }
+
+              }
+
+              //输入框跳转页
+              function jumppage(type) {
+                if (type == 1) {
+                  if ($('#certificate_page_jump_index').val() > $('#certificate_fin').val()) {
+                    var page = $('#certificate_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#certificate_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+                else if (type == 2) {
+                  if ($('#star_page_jump_index').val() > $('#star_fin').val()) {
+                    var page = $('#star_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#star_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+                else if (type == 3) {
+                  if ($('#case_page_jump_index').val() > $('#case_fin').val()) {
+                    var page = $('#case_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#case_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+                else if (type == 4) {
+                  if ($('#brand_page_jump_index').val() > $('#brand_fin').val()) {
+                    var page = $('#brand_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#brand_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+                else if (type == 5) {
+                  if ($('#honor_page_jump_index').val() > $('#honor_fin').val()) {
+                    var page = $('#honor_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#honor_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+                else if (type == 6) {
+                  if ($('#photo_page_jump_index').val() > $('#photo_fin').val()) {
+                    var page = $('#photo_fin').val();
+                    getlist(type, page);
+                  }
+                  else {
+                    var page = $('#photo_page_jump_index').val();
+                    getlist(type, page);
+                  }
+                }
+              }
+
+              //查找
+              $("#certificate_search_button").click(function () {
+                var search = $('#certificate_txtname').val();
+                getlist(1, 1, search);
+              });
+              $("#star_search_button").click(function () {
+                var search = $('#star_txtname').val();
+                getlist(2, 1, search);
+              });
+              $("#case_search_button").click(function () {
+                var search = $('#case_txtname').val();
+                getlist(3, 1, search);
+              });
+              $("#brand_search_button").click(function () {
+                var search = $('#brand_txtname').val();
+                getlist(4, 1, search);
+              });
+              $("#honor_search_button").click(function () {
+                var search = $('#honor_txtname').val();
+                getlist(5, 1, search);
+              });
+              $("#photo_search_button").click(function () {
+                var search = $('#photo_txtname').val();
+                getlist(6, 1, search);
+              });
+
+
+
+              /*读取当前供应商信息显示出来*/
+              var client = new HproseHttpClient('Supplier.html', ['showRegInformation']);
+              client.showRegInformation("f8a54c29a10e90f3c17807c911c125ba", function (result) {
+                //
+                var jsonobj = JSON.parse(result);
+                if (jsonobj['success'] == 1) {
+                  //如果供应商状态为已提交，跳转到
+                  /*将后台接口查询到的供应商基本信息返回回来显示在前端页面*/
+                  $("#supplier_id").val(jsonobj['supplier']['id']);
+                  $("#name").val(jsonobj['supplier']['name']);
+                  $("#description").val(jsonobj['supplier']['description']);
+                  editor1.html(jsonobj['supplier']['description']);
+                  if (jsonobj['logoattach'] != false && typeof (jsonobj['logoattach']) != "undefined") {
+                    addAttach("logo", jsonobj['logoattach']['id'], jsonobj['logoattach']['title'], jsonobj['logoattach']['size'], jsonobj['logoattach']['url']);
+                    if (jsonobj['logoattach']['id'] == 88) {
+                      $("#logo_detail").html('');
+                    }
+                  }
+                  if (jsonobj['licattach'] != false && typeof (jsonobj['licattach']) != "undefined") {
+                    addAttach("licattach", jsonobj['licattach']['id'], jsonobj['licattach']['title'], jsonobj['licattach']['size'], jsonobj['licattach']['url']);
+                  }
+                  if (jsonobj['taxattach'] != false && typeof (jsonobj['taxattach']) != "undefined") {
+                    addAttach("taxattach", jsonobj['taxattach']['id'], jsonobj['taxattach']['title'], jsonobj['taxattach']['size'], jsonobj['taxattach']['url']);
+                  }
+                  if (jsonobj['orgattach'] != false && typeof (jsonobj['orgattach']) != "undefined") {
+                    addAttach("orgattach", jsonobj['orgattach']['id'], jsonobj['orgattach']['title'], jsonobj['orgattach']['size'], jsonobj['orgattach']['url']);
+                  }
+                  if (jsonobj['cor_on_attach'] != false && typeof (jsonobj['cor_on_attach']) != "undefined") {
+                    addAttach("idcard", jsonobj['cor_on_attach']['id'], jsonobj['cor_on_attach']['title'], jsonobj['cor_on_attach']['size'], jsonobj['cor_on_attach']['url']);
+                  }
+                  if (jsonobj['cor_back_attach'] != false && typeof (jsonobj['cor_back_attach']) != "undefined") {
+                    addAttach("card", jsonobj['cor_back_attach']['id'], jsonobj['cor_back_attach']['title'], jsonobj['cor_back_attach']['size'], jsonobj['cor_back_attach']['url']);
+                  }
+                  if (jsonobj['supplier']['type'] == 1) {
+                    $("#type").html("厂商");
+                    $("#type").attr("value", jsonobj['supplier']['type']);
+                  } else {
+                    if (jsonobj['supplier']['type'] == 2) {
+                      $("#type").html("代理商");
+                      $("#type").attr("value", jsonobj['supplier']['type']);
+                    } else {
+                      $("#type").attr("value", "");
+                    }
+                  }
+                  if (jsonobj['supplier']['state'] == 0 && jsonobj['supplier']['fund'] == 0) {
+                    $("#fund").val('');
+                  } else {
+                    $("#fund").val(parseFloat(jsonobj['supplier']['fund']));
+                  }
+
+                  if (jsonobj['supplier']['createyear'] > 0) {
+                    $("#createyear").val(jsonobj['supplier']['createyear']);
+                  } else {
+                    $("#createyear").val('');
+                  }
+                  if (jsonobj['supplier']['state'] == 0 && (jsonobj['supplier']['operationperiod']).substring(0, 10) == '0000-00-00') {
+                    $("#operationperiod").val('');
+                  } else {
+                    $("#operationperiod").val((jsonobj['supplier']['operationperiod']).substring(0, 10));
+                  }
+                  $("#legalman").val(jsonobj['supplier']['legalman']);
+                  $("#scope").val(jsonobj['supplier']['scope']);
+                  $("#licnumber").val(jsonobj['supplier']['licnumber']);
+                  $("#linktel1").val(jsonobj['supplier']['linktel'].split("-")[0]);
+                  $("#linktel2").val(jsonobj['supplier']['linktel'].split("-")[1]);
+                  $("#linkman").val(jsonobj['supplier']['linkman']);
+                  $("#linkpost").val(jsonobj['supplier']['linkmanpos']);
+                  $("#linkphone").val(jsonobj['supplier']['linkmanphone']);
+
+                  if (jsonobj['supplier']['province'] != '') {
+                    $("#province").html(jsonobj['supplier']['province']);
+                    $("#province").val(jsonobj['supplier']['province']);
+                  } else {
+                    $("#province").html('选择省/直辖市');
+                    $("#province").val('选择省/直辖市');
+                  }
+                  if (jsonobj['supplier']['city'] != '') {
+                    $("#city").html(jsonobj['supplier']['city']);
+                    $("#city").val(jsonobj['supplier']['city']);
+                  } else {
+                    $("#city").html('请选择城市');
+                    $("#city").val('请选择城市');
+                  }
+                  if (jsonobj['supplier']['area'] != '') {
+                    $("#area").html(jsonobj['supplier']['area']);
+                    $("#area").val(jsonobj['supplier']['area']);
+                  } else {
+                    $("#area").html('请选择地区');
+                    $("#area").val('请选择地区');
+                  }
+                  //$("#province").html(jsonobj['supplier']['province']);
+                  //$("#city").html(jsonobj['supplier']['city']);
+                  //$("#area").html(jsonobj['supplier']['area']);
+                  $("#address").val(jsonobj['supplier']['address']);
+                  $("#refereetype").attr('value', jsonobj['supplier']['refereetype']);
+                  switch (jsonobj['supplier']['refereetype']) {
+                    case '2':
+                      $("#refereetype").html('筑集采销售');
+                      $("#referee").show();
+                      break;
+                    case '3':
+                      $("#refereetype").html('第三方营销机构');
+                      $("#referee").show();
+                      break;
+                    case '4':
+                      $("#refereetype").html('其他');
+                      $("#referee").show();
+                      break;
+                    default:
+                      $("#refereetype").html('无推荐人');
+                      $("#refereetype").attr('value', 1);
+                      $("#referee").hide();
+                  }
+
+                  $("#referee").val(jsonobj['supplier']['referee']);
+                  $("#referee").removeClass('i-gray');
+                  /*
+                    if(jsonobj['licattach']!=false && typeof(jsonobj['licattach'])!="undefined"){
+                    addAttachReg("licattach",jsonobj['licattach']['id'],jsonobj['licattach']['title'],jsonobj['licattach']['size'],jsonobj['licattach']['url']);
+                    $("#licattach_img").attr("src", jsonobj['supplier']['licattach_url']);
+                  }else{
+                    $("#licattach_img").attr('src','/Public/images/empty.jpg');  
+                  }
+                    if(jsonobj['orgattach']!=false && typeof(jsonobj['orgattach'])!="undefined"){
+                    addAttachReg("orgattach",jsonobj['orgattach']['id'],jsonobj['orgattach']['title'],jsonobj['orgattach']['size'],jsonobj['orgattach']['url']);
+                    $("#orgattach_img").attr("src", jsonobj['supplier']['orgattach_url']);
+                  }else{
+                    $("#orgattach_img").attr('src','/Public/images/empty.jpg');  
+                  }
+                    if(jsonobj['taxattach']!=false && typeof(jsonobj['taxattach'])!="undefined"){
+                    addAttachReg("taxattach",jsonobj['taxattach']['id'],jsonobj['taxattach']['title'],jsonobj['taxattach']['size'],jsonobj['taxattach']['url']);	
+                    $("#taxattach_img").attr("src", jsonobj['supplier']['taxattach_url']);			
+                  }else{
+                    $("#taxattach_img").attr('src','/Public/images/empty.jpg');  
+                  }
+                   */
+                  //地区选择v2.0.1 by yaorb	                                       
+                  var supplyarea = JSON.parse(jsonobj['supplier']['supplyarea']);
+                  if (supplyarea != '' && supplyarea != null) {
+                    for (i = 0; i < supplyarea.length; i++) {
+                      var strLi = "<li><a href=\"javascript:void(0);\">" + supplyarea[i] + "</a><s class=\"del\" onclick='cancelArea(\"" + supplyarea[i] + "\")'></s></li>";
+                      $(".area_selected_show").append(strLi);
+                    }
+                    getArea();
+                  }
+                  //主营物资选择v2.0.1 by yaorb	                                       
+                  var supplygoods = JSON.parse(jsonobj['supplier']['supplygoods']);
+                  if (supplygoods != '' && supplygoods != null) {
+                    for (i = 0; i < supplygoods.length; i++) {
+                      var strLi = "<li><a href=\"javascript:void(0);\">" + supplygoods[i] + "</a><s class=\"del\" onclick='cancelMaterial(\"" + supplygoods[i] + "\",false)'></s></li>";
+                      $(".material_selected_show").append(strLi);
+                    }
+                  }
+                  //fy物资选择v2.0.1 by yaorb
+                  var materialclass = JSON.parse(jsonobj['supplier']['materialclass']);
+                  if (materialclass != '' && materialclass != null) {
+                    for (i = 0; i < materialclass.length; i++) {
+                      var strLi = "<li><a href=\"javascript:void(0);\">" + materialclass[i] + "</a><s class=\"del\" onclick='cancelMaterial(\"" + materialclass[i] + "\",true)'></s></li>";
+                      $(".material_selected_show_fy").append(strLi);
+                    }
+                  }
+
+                  /*将后台接口查询到的供应商附件列表信息返回回来显示在前端页面*/
+                  //第一个参数表示供应商id，第二个参数表示需要查询哪个列表，0表示所有列表，第三个参数表示页数
+                  attachment_list(jsonobj['supplier']['id'], 0, 1);
+                } else {
+                  alert(jsonobj['info']);
+                  document.location = "/index.php/Supplier/Index/index";
+
+                }
+
+              }, function (name, err) {
+
+                //
+              });
+
+</script>
+
+<script type="text/javascript">
+      // 选择三证合一
+      var flag = false; //false 非三证合一  true 三证合一
+      function threeAttachs(checkbox) {
+        if (checkbox.checked == true) {
+          flag = true;
+          $('#threeAttachs').attr('data-flag', true); //三证合一
+          $('.tax-attaches').hide();
+          $('.org-attaches').hide();
+          $('.lic-attaches').find('.odtitle').text('三证合一：');
+        } else {
+          flag = false;
+          $('#threeAttachs').attr('data-flag', false); //非三证合一
+          $('.tax-attaches').show();
+          $('.org-attaches').show();
+          $('.lic-attaches').find('.odtitle').text('营业执照：');
+        }
+      }
+
+
+      KindEditor.ready(function (K) {
+        //var editor1 = KindEditor.create('textarea[name="description"]');
+        var editor = K.editor({
+          allowFileManager: true
+        });
+        //logo上传
+        K('#btnlogo').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#logo').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("logo", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#logo').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+
+        K('#btnlicattach').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#licattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("licattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url, jsonobj.createtime, jsonobj.attachid);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#licattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        K('#btntaxattach').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#taxattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("taxattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url, jsonobj.createtime, jsonobj.attachid);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#taxattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        K('#btnorgattach').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#orgattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("orgattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url, jsonobj.createtime, jsonobj.attachid);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#orgattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        K('#btnidcard').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#idcard').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("idcard", jsonobj.attachid, jsonobj.title, jsonobj.size, url, jsonobj.createtime, jsonobj.attachid);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#idcard').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        K('#btncard').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#card').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttach("card", jsonobj.attachid, jsonobj.title, jsonobj.size, url, jsonobj.createtime, jsonobj.attachid);
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#card').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+
+
+
+
+
+
+        /*del by shihaiying 20150615*/
+        //营业执照
+        K('#licattach_upload').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#licattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttachReg("licattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                    $("#licattach_img").attr('src', url);
+                    //将attach表的id直接插入supplier表
+                    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+                    var supplier_id = $("#supplier_id").val();
+                    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+                    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, 1, jsonobj.attachid, function (result) {
+                      /*把返回的字符串转换为json格式*/
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj.success == 1) {
+                        alert('上传成功');
+                      } else {
+                        alert(jsonobj.info);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+
+
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#licattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        //组织机构代码
+        K('#orgattach_upload').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#orgattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttachReg("orgattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                    $("#orgattach_img").attr('src', url);
+
+
+                    //将attach表的id直接插入supplier表
+                    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+                    var supplier_id = $("#supplier_id").val();
+                    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+                    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, 2, jsonobj.attachid, function (result) {
+                      /*把返回的字符串转换为json格式*/
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj.success == 1) {
+                        alert('上传成功');
+                      } else {
+                        alert(jsonobj.info);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+
+
+
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#orgattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        //税务登记
+        K('#taxattach_upload').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#taxattach').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttachReg("taxattach", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                    $("#taxattach_img").attr('src', url);
+
+
+                    //将attach表的id直接插入supplier表
+                    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+                    var supplier_id = $("#supplier_id").val();
+                    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+                    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, 3, jsonobj.attachid, function (result) {
+                      /*把返回的字符串转换为json格式*/
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj.success == 1) {
+                        alert('上传成功');
+                      } else {
+                        alert(jsonobj.info);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+
+
+
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#taxattach').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+
+        //身份证正面
+        K('#idcard_upload').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#idcard').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttachReg("idcard", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                    $("#idcard_img").attr('src', url);
+
+
+                    //将attach表的id直接插入supplier表
+                    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+                    var supplier_id = $("#supplier_id").val();
+                    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+                    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, 2, jsonobj.attachid, function (result) {
+                      /*把返回的字符串转换为json格式*/
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj.success == 1) {
+                        alert('上传成功');
+                      } else {
+                        alert(jsonobj.info);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+
+
+
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#idcard').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+        //身份证反面面
+        K('#card_upload').click(function () {
+          editor.loadPlugin('image', function () {
+            editor.plugin.imageDialog({
+              showRemote: false,
+              imageUrl: K('#card').val(),
+              clickFn: function (url, title, width, height, border, align) {
+                /*调用接口读取图片信息*/
+                var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+                client.getAttachmentInfo(url, function (result) {
+                  /*把返回的字符串转换为json格式*/
+                  var jsonobj = JSON.parse(result);
+                  if (jsonobj.success == 1) {
+                    addAttachReg("card", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+                    $("#card_img").attr('src', url);
+
+
+                    //将attach表的id直接插入supplier表
+                    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+                    var supplier_id = $("#supplier_id").val();
+                    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+                    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, 2, jsonobj.attachid, function (result) {
+                      /*把返回的字符串转换为json格式*/
+                      var jsonobj = JSON.parse(result);
+                      if (jsonobj.success == 1) {
+                        alert('上传成功');
+                      } else {
+                        alert(jsonobj.info);
+                      }
+                    }, function (name, err) {
+                      /*alert(err);*/
+                    });
+
+
+
+                  } else {
+                    alert(jsonobj.info);
+                  }
+                }, function (name, err) {
+                  /*alert(err);*/
+                });
+                K('#card').val(url);
+                editor.hideDialog();
+              }
+            });
+          });
+        });
+
+        /*del by shi 20150615*/
+      });
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  KindEditor.ready(function (K) {
+    var editor1 = KindEditor.create('textarea[name="description"]');
+    var editor = K.editor({
+      allowFileManager: true
+    });
+
+    //资质证书上传
+    K('#certificate_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#certificate').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_cert_brand_honor_photo("certificate", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#certificate').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+    //企业品牌上传
+    K('#brand_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#brand').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_cert_brand_honor_photo("brand", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#brand').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+    //企业荣誉上传
+    K('#honor_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#honor').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_cert_brand_honor_photo("honor", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#honor').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+    //企业相册上传
+    K('#photo_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#photo').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_cert_brand_honor_photo("photo", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#photo').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+    //明星产品上传
+    K('#star_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#star').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_star_case("star", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#star').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+
+    //成功案例上传
+    K('#case_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#case').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_star_case("case", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#case').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+
+    //编辑明星产品上传
+    K('#edit_star_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#edit_star').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_star_case("edit_star", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#edit_star').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+
+    //编辑成功案例上传
+    K('#edit_case_upload').click(function () {
+      editor.loadPlugin('image', function () {
+        editor.plugin.imageDialog({
+          showRemote: false,
+          imageUrl: K('#edit_case').val(),
+          clickFn: function (url, title, width, height, border, align) {
+            /*调用接口读取图片信息*/
+            var client = new HproseHttpClient('Base.html', ['getAttachmentInfo']);
+            client.getAttachmentInfo(url, function (result) {
+              /*把返回的字符串转换为json格式*/
+              var jsonobj = JSON.parse(result);
+              if (jsonobj.success == 1) {
+                upload_star_case("edit_case", jsonobj.attachid, jsonobj.title, jsonobj.size, url);
+              } else {
+                alert(jsonobj.info);
+              }
+            }, function (name, err) {
+              /*alert(err);*/
+            });
+            K('#edit_case').val(url);
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+
+
+
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  /*添加资质证书、企业品牌，企业荣誉，企业相册附件*/
+  function upload_cert_brand_honor_photo(objname, id, title, size, url) {
+    var objname_id = "#" + objname + "_id";
+    var objname_detail = "#" + objname + "_detail";
+    if (size > 1024 * 1024) {
+      size = size / 1024 / 1024;
+      strsize = size.toFixed(1) + 'M';
+    } else if (size > 1024) {
+      size = size / 1024;
+      strsize = size.toFixed(1) + 'KB';
+    } else {
+      strsize = size + 'KB';
+    }
+    /*保存图片路径*/
+    $(objname).val(url);
+
+    /*保存图片附件id到objname_id中*/
+    //alert(id);
+    str_ids = $(objname_id).val();
+    str_ids += id + ',';
+    ///alert(str_ids);
+    $(objname_id).val(str_ids);
+    /*添加图片信息*/
+    //htmlstr =  $(objname_detail).html();
+    htmlstr = '<div id="div_' + objname + '_' + id + '" style="margin: 10px"><input type="hidden" id="input_' + objname + '_id' + '" value="' + id + '">' + title.substring(0, 6) + '(' + strsize + ')<a class="chx blue" title="查看" target="_blank" href="' + url + '"  >查看</a><a class="blue" title="删除" onclick=\'removeAttachOnebyOne("' + objname + '",' + id + ');\' >删除</a><img src=' + url + ' width="50px" height="50px" style="padding: 0 50px"></br><span style="color:red;">*</span><span style="color: black;">名称：</span><input type="text" class="mo-input-d" style="float:none;"><input type="checkbox" value="1">&nbsp;<span style="color: black;">默认首页显示</span></div>';
+    $(objname_detail).append(htmlstr);
+  }
+
+
+  /*添加明星产品、成功案例*/
+  function upload_star_case(objname, id, title, size, url) {
+    var objname_id = "#" + objname + "_id";
+    var objname_detail = "#" + objname + "_detail";
+    if (size > 1024 * 1024) {
+      size = size / 1024 / 1024;
+      strsize = size.toFixed(1) + 'M';
+    } else if (size > 1024) {
+      size = size / 1024;
+      strsize = size.toFixed(1) + 'KB';
+    } else {
+      strsize = size + 'KB';
+    }
+    /*保存图片路径*/
+    $(objname).val(url);
+
+    /*保存图片附件id到objname_id中*/
+    //alert(id);
+    str_ids = $(objname_id).val();
+    str_ids += id + ',';
+    ///alert(str_ids);
+    $(objname_id).val(str_ids);
+    /*添加图片信息*/
+    // htmlstr =  $(objname_detail).html();
+    htmlstr = '<div id="div_' + objname + '_' + id + '" style="margin: 10px"><input type="hidden" id="input_' + objname + '_id' + '" value="' + id + '">' + title.substring(0, 6) + '(' + strsize + ')<a class="chx blue" title="查看" target="_blank" href="' + url + '"  >查看</a><a class="blue" title="删除" onclick=\'removeAttachOnebyOne("' + objname + '",' + id + ');\' >删除</a><img src=' + url + ' width="50px" height="50px" style="padding: 0 50px"></div>';
+    $(objname_detail).append(htmlstr);
+  }
+
+
+  /*删除图片及数据库中的图片效果 type 1：营业执照 2组织机构代码证 3税务登记证*/
+  function removeAttachReg(objname) {
+
+    /*删除数据库中的相应图片信息*/
+    /*调用接口读取图片信息*/
+    //将attach表的id直接插入supplier表
+    var client = new HproseHttpClient('Supplier.html', ['addRegThreeAttachHandle']);
+    var supplier_id = $("#supplier_id").val();
+    if (objname == "licattach") { type = 1; }
+    if (objname == "orgattach") { type = 2; }
+    if (objname == "taxattach") { type = 3; }
+    //参数1表示营业执照，2表示组织机构代码，3表示税务登记证
+    client.addRegThreeAttachHandle("f8a54c29a10e90f3c17807c911c125ba", supplier_id, type, 0, function (result) {
+      /*把返回的字符串转换为json格式*/
+      var jsonobj = JSON.parse(result);//alert(result);
+      if (jsonobj.success == 1) {
+        //alert('删除成功');
+      } else {
+        alert(jsonobj.info);
+      }
+    }, function (name, err) {
+      /*alert(err);*/
+    });
+
+
+    /*清除id为objname_id的input框的值*/
+    /*清除id为objname_detail的<span>标签中的html数据*/
+    var objname_id = "#" + objname + "_id";
+    var objname_detail = "#" + objname + "_detail";
+    var objname_img = "#" + objname + "_img";
+    $(objname_id).val("");
+    $(objname_detail).html("");
+    if ($(objname_img).length > 0) {
+      $(objname_img).attr("src", publicpath + "/images/empty.jpg");
+    }
+  }
+
+  /*添加一个附件*/
+  function addAttachReg(objname, id, title, size, url) {
+    var objname_id = "#" + objname + "_id";
+    var objname_detail = "#" + objname + "_detail";
+    $(objname_id).val(id);
+    if (size > 1024 * 1024) {
+      size = size / 1024 / 1024;
+      strsize = size.toFixed(1) + 'M';
+    } else if (size > 1024) {
+      size = size / 1024;
+      strsize = size.toFixed(1) + 'KB';
+    } else {
+      strsize = size + 'KB';
+    }
+    $(objname).val(url);
+    htmlstr = title.substring(0, 6) + '(' + strsize + ')<a class="chx blue" title="查看" target="_blank" href="' + url + '"  >查看</a><a class="blue" title="删除" onclick=\'removeAttachReg("' + objname + '");\' >删除</a>';
+    $(objname_detail).html(htmlstr);
+  }
+
+</script>
+<script type="text/javascript">
+  $(function () {
+    $("input[name=rdperiod]").click(function (e) {
+      if ($(this).val() == 2) {
+        $("#operationperiod").show().val("");
+      }
+      else {
+        $("#operationperiod").hide().val("2999-12-31");
+      }
+    });
+  })
+
+</script></body></html>

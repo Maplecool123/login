@@ -1,0 +1,71 @@
+/**********************************交易规则页面 开始*****************************/
+.banner-img{
+	background-image:url("../rules_files/jygz.jpg");
+}
+.rules{
+    margin-bottom: 84px;
+}
+
+/*标题容器*/
+.rules_left{
+    margin-top: 12px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/*交易规则--标题*/
+.rules_left h1{
+    font-size: 24px;
+    color:#2b2c2f;
+    font-weight: 400;
+}
+
+/*交易规则--内容*/
+
+.mt67{
+    margin-top: 67px;
+}
+/*第一章标题*/
+.rules_content h3{
+    margin-top: 19px;
+    font-size: 20px;
+    color:#2b2c2f;
+    padding: 11px 0;
+}
+
+/*字段*/
+.rules_content .spacing{
+    margin-bottom: 35px;
+}
+
+.rules_content  span{
+    display: block;
+    font-size: 16px;
+    color:#2b2c2f;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.rules_content p{
+    font-size: 14px;
+    color:#565656;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.rules_content p i{
+    display: inline-block;
+    font-size: 14px;
+    color:#2b2c2f;
+    font-weight: 600;
+}
+
+.mt90{
+    margin-top: 90px;
+}
+
+.mb24{
+    margin-bottom: 24px;
+}
+
+/**********************************交易规则页面 结束*****************************/
